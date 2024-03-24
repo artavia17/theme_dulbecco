@@ -1,7 +1,6 @@
 
 const loadPage = () => {
 
-    alert('Hola')
 
 }
 

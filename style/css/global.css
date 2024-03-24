@@ -1,3 +1,158 @@
+@font-face {
+  font-family: dmSans_italic;
+  src: url(../../assets/fonts/DMSans-Italic.ttf);
+}
+@font-face {
+  font-family: dmSans_variable;
+  src: url(../../assets/fonts/DMSans-Variable.ttf);
+}
+@font-face {
+  font-family: nanumGothicCodingBold;
+  src: url(../../assets/fonts/NanumGothicCoding-Bold.ttf);
+}
+@font-face {
+  font-family: nanumGothicCodingRegular;
+  src: url(../../assets/fonts/NanumGothicCoding-Regular.ttf);
+}
+header #show_menu {
+  display: none;
+}
+header #show_menu:checked ~ .show_menu_mobile {
+  transform: rotate3d(1, 1, 1, 360deg);
+}
+header #show_menu:checked ~ .show_menu_mobile hr {
+  opacity: 0;
+}
+header #show_menu:checked ~ .show_menu_mobile::before, header #show_menu:checked ~ .show_menu_mobile::after {
+  background-color: #ffffff;
+}
+header #show_menu:checked ~ .show_menu_mobile::before {
+  transform: translateY(0.9375rem) rotate(45deg);
+}
+header #show_menu:checked ~ .show_menu_mobile::after {
+  transform: translateY(-0.875rem) rotate(-45deg);
+}
+header #show_menu:checked ~ .menu-header-menu-container {
+  pointer-events: initial;
+}
+header #show_menu:checked ~ .menu-header-menu-container .menu_class li {
+  opacity: 1;
+}
+header #show_menu:checked ~ .menu-header-menu-container .menu_class::before {
+  background-color: #ffffff;
+}
+@supports (-webkit-touch-callout: none) {
+  header #show_menu:checked ~ .menu-header-menu-container .menu_class::after {
+    transform: rotate(30deg) translateX(-90%);
+  }
+}
+@supports not (-webkit-touch-callout: none) {
+  header #show_menu:checked ~ .menu-header-menu-container .menu_class::after {
+    transform: rotate(26deg) translateX(-90%);
+  }
+}
+header .show_menu_mobile {
+  cursor: pointer;
+  z-index: 9999;
+  position: fixed;
+  top: 1.25rem;
+  right: 1.25rem;
+  width: 2.5rem;
+  height: 1.875rem;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  transform: rotate3d(1, 1, 1, 0deg);
+  transition: 1s ease;
+  mix-blend-mode: difference;
+}
+header .show_menu_mobile::before, header .show_menu_mobile::after {
+  content: "";
+  width: 100%;
+  display: block;
+  height: 0.125rem;
+  background-color: #000000;
+  transition: 0.5s ease;
+  transform: translateY(0rem) rotate(0deg);
+  border-radius: 20px;
+}
+header .show_menu_mobile hr {
+  border: none;
+  width: 100%;
+  height: 0.125rem;
+  background-color: #000000;
+  opacity: 1;
+  transition: 0.5s ease;
+  border-radius: 20px;
+}
+header .menu-header-menu-container {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100dvw;
+  height: 100dvh;
+  z-index: 99;
+  pointer-events: none;
+}
+header .menu-header-menu-container ul {
+  list-style: none;
+}
+header .menu-header-menu-container .menu_class {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 1.875rem;
+  list-style: none;
+}
+header .menu-header-menu-container .menu_class::before, header .menu-header-menu-container .menu_class::after {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  z-index: -1;
+}
+header .menu-header-menu-container .menu_class::before {
+  background: transparent;
+  backdrop-filter: blur(0px);
+  transition: 0.5s ease;
+  width: 100%;
+  height: 100%;
+}
+header .menu-header-menu-container .menu_class::after {
+  width: 200%;
+  height: 200%;
+  background: #000000;
+  transition: 0.7s ease;
+  transform: rotate(30deg) translateX(-200%);
+}
+header .menu-header-menu-container .menu_class li {
+  opacity: 0;
+  transition: 1.5s ease;
+  mix-blend-mode: difference;
+}
+header .menu-header-menu-container .menu_class li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.875rem;
+  font-family: nanumGothicCodingRegular;
+  line-height: 2.8125rem;
+  position: relative;
+}
+header .menu-header-menu-container .menu_class li a::before {
+  content: "(";
+}
+header .menu-header-menu-container .menu_class li a::after {
+  content: ")";
+}
+header .menu-header-menu-container .menu_class li .sub-menu {
+  height: 0px;
+  overflow: hidden;
+}
+
 *,
 html,
 body {

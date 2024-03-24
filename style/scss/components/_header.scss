@@ -1,0 +1,202 @@
+header {
+
+    #show_menu {
+        display: none;
+    }
+
+    #show_menu:checked ~ .show_menu_mobile {
+
+        transform: rotate3d(1, 1, 1, 360deg);
+
+        hr{
+        
+            opacity: 0;
+    
+        }
+
+        &::before,
+        &::after{
+            background-color: $principal_color;
+        }
+
+        &::before {
+
+            transform: translateY(rem(15px)) rotate(45deg);
+
+        }
+
+        &::after{
+            transform: translateY(rem(-14px)) rotate(-45deg);
+        }
+
+    }
+
+    #show_menu:checked ~ .menu-header-menu-container {
+        
+        pointer-events: initial;
+
+        .menu_class {
+
+            li {
+                opacity: 1;
+            }
+
+            &::before{ 
+
+                background-color: $principal_color;
+
+            }
+
+            &::after{
+
+                @supports (-webkit-touch-callout: none) {
+                    transform: rotate(30deg) translateX(-90%);
+                }
+                  
+                @supports not (-webkit-touch-callout: none) {
+                    transform: rotate(26deg) translateX(-90%);    
+                }
+
+            }
+
+        }
+
+    }
+
+    .show_menu_mobile {
+
+        cursor: pointer;
+        z-index: 9999;
+        position: fixed;
+        top: rem(20px);
+        right: rem(20px);
+        width: rem(40px);
+        height: rem(30px);
+        display: flex;
+        flex-flow: column;
+        justify-content: space-between;
+        transform: rotate3d(1, 1, 1, 0deg);
+        transition: 1s ease;
+        mix-blend-mode: difference;
+        
+        &::before,
+        &::after{
+            content: '';
+            width: 100%;
+            display: block;
+            height: rem(2px);
+            background-color: $secundary_color;
+            transition: .5s ease;
+            transform: translateY(rem(0px)) rotate(0deg);
+            border-radius: 20px;
+        }
+
+        hr {
+
+            border: none;
+            width: 100%;
+            height: rem(2px);
+            background-color: $secundary_color;
+            opacity: 1;
+            transition: .5s ease;
+            border-radius: 20px;
+
+        }
+
+    }
+
+    .menu-header-menu-container {
+
+        position: fixed;
+        top: 0px;
+        left: 0px;
+        width: 100dvw;
+        height: 100dvh;
+        z-index: 99;
+        pointer-events: none;
+
+        ul {
+
+            list-style: none;
+
+        }
+
+        .menu_class {
+
+            position: relative;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
+            padding: rem(30px);
+            list-style: none;
+
+            &::before,
+            &::after{
+                
+                content: "";
+                position: absolute;
+                top: 0%;
+                left: 0%;
+                z-index: -1;
+
+            }
+
+            &::before{
+                background: transparent;
+                backdrop-filter: blur(0px);
+                transition: .5s ease;
+                width: 100%;
+                height: 100%;
+            }
+
+            &::after{
+                width: 200%;
+                height: 200%;
+                background: $secundary_color;
+                transition: .7s ease;
+                transform: rotate(30deg) translateX(-200%);
+            }
+
+
+            li {
+
+                opacity: 0;
+                transition: 1.5s ease;
+                mix-blend-mode: difference;
+
+                a {
+                    
+                    color: $principal_color;
+                    text-decoration: none;
+                    font-size: rem(30px);
+                    font-family: $font_quaternary;
+                    line-height: rem(45px);
+                    position: relative;
+                    
+                    &::before {
+                        content: "(";
+                    }
+
+                    &::after {
+                        content: ")";
+                    }
+
+                }
+
+                .sub-menu {
+
+                    height: 0px;
+                    overflow: hidden;
+
+                }
+
+            }
+
+        }
+
+    }
+
+}
