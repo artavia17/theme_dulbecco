@@ -1,0 +1,17 @@
+/*
+    Theme Name: Dulbecco Theme
+    Theme URI: https://dulbeccobioart.com
+    Description: Theme created with love :)
+    Version: 1.0.0
+    Author: Alonso Artavia
+    Author URI: https://alonsocr.com
+    Tags: Blog, Portfolio
+    Text Domain: dulbeccobioart.com
+    Tested up to: 1.0.0
+    Requires at least: 6.4.3
+    Requires PHP: 8.0
+*/
+
+
+/* Imports scss */
+@import url(./style/css/global.css);

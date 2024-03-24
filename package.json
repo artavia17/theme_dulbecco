@@ -1,0 +1,20 @@
+{
+  "name": "dulbecco",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass": "sass --watch style/scss:style/css"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.72.0"
+  },
+  "devDependencies": {
+    "@wordpress/scripts": "^27.5.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.4.3"
+  }
+}
