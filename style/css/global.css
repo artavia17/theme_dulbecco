@@ -14,6 +14,12 @@
   font-family: nanumGothicCodingRegular;
   src: url(../../assets/fonts/NanumGothicCoding-Regular.ttf);
 }
+@media (min-width: 700px) {
+  header {
+    position: sticky;
+    top: 0px;
+  }
+}
 header #show_menu {
   display: none;
 }
@@ -26,6 +32,11 @@ header #show_menu:checked ~ .show_menu_mobile hr {
 header #show_menu:checked ~ .show_menu_mobile::before, header #show_menu:checked ~ .show_menu_mobile::after {
   background-color: #ffffff;
 }
+@media (min-width: 550px) {
+  header #show_menu:checked ~ .show_menu_mobile::before, header #show_menu:checked ~ .show_menu_mobile::after {
+    background-color: #000000;
+  }
+}
 header #show_menu:checked ~ .show_menu_mobile::before {
   transform: translateY(0.9375rem) rotate(45deg);
 }
@@ -35,11 +46,19 @@ header #show_menu:checked ~ .show_menu_mobile::after {
 header #show_menu:checked ~ .menu-header-menu-container {
   pointer-events: initial;
 }
-header #show_menu:checked ~ .menu-header-menu-container .menu_class li {
+header #show_menu:checked ~ .menu-header-menu-container .menu_class li.active {
+  transition: 0.5s ease;
   opacity: 1;
+  transform: translateX(0%);
 }
 header #show_menu:checked ~ .menu-header-menu-container .menu_class::before {
   background-color: #ffffff;
+}
+@media (min-width: 550px) {
+  header #show_menu:checked ~ .menu-header-menu-container .menu_class::before {
+    background-color: rgba(255, 255, 255, 0.2745098039);
+    backdrop-filter: blur(5px);
+  }
 }
 @supports (-webkit-touch-callout: none) {
   header #show_menu:checked ~ .menu-header-menu-container .menu_class::after {
@@ -50,6 +69,9 @@ header #show_menu:checked ~ .menu-header-menu-container .menu_class::before {
   header #show_menu:checked ~ .menu-header-menu-container .menu_class::after {
     transform: rotate(26deg) translateX(-90%);
   }
+}
+header .show_menu_mobile.active {
+  pointer-events: none;
 }
 header .show_menu_mobile {
   cursor: pointer;
@@ -65,6 +87,16 @@ header .show_menu_mobile {
   transform: rotate3d(1, 1, 1, 0deg);
   transition: 1s ease;
   mix-blend-mode: difference;
+}
+@media (min-width: 550px) {
+  header .show_menu_mobile {
+    mix-blend-mode: initial;
+  }
+}
+@media (min-width: 700px) {
+  header .show_menu_mobile {
+    display: none;
+  }
 }
 header .show_menu_mobile::before, header .show_menu_mobile::after {
   content: "";
@@ -94,6 +126,28 @@ header .menu-header-menu-container {
   z-index: 99;
   pointer-events: none;
 }
+@media (min-width: 700px) {
+  header .menu-header-menu-container {
+    position: relative;
+    width: initial;
+    height: initial;
+    pointer-events: initial;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
+    padding: 0.625rem;
+  }
+}
+@media (min-width: 901px) {
+  header .menu-header-menu-container {
+    padding: 0.75rem;
+  }
+}
+@media (min-width: 1100px) {
+  header .menu-header-menu-container {
+    padding: 0.9375rem;
+  }
+}
 header .menu-header-menu-container ul {
   list-style: none;
 }
@@ -108,12 +162,29 @@ header .menu-header-menu-container .menu_class {
   padding: 1.875rem;
   list-style: none;
 }
+@media (min-width: 700px) {
+  header .menu-header-menu-container .menu_class:hover a {
+    opacity: 0.5;
+  }
+}
+@media (min-width: 700px) {
+  header .menu-header-menu-container .menu_class {
+    flex-flow: row;
+    padding: 0rem;
+    width: fit-content;
+  }
+}
 header .menu-header-menu-container .menu_class::before, header .menu-header-menu-container .menu_class::after {
   content: "";
   position: absolute;
   top: 0%;
   left: 0%;
   z-index: -1;
+}
+@media (min-width: 700px) {
+  header .menu-header-menu-container .menu_class::before, header .menu-header-menu-container .menu_class::after {
+    display: none;
+  }
 }
 header .menu-header-menu-container .menu_class::before {
   background: transparent;
@@ -131,22 +202,84 @@ header .menu-header-menu-container .menu_class::after {
 }
 header .menu-header-menu-container .menu_class li {
   opacity: 0;
-  transition: 1.5s ease;
+  transition: 0.2s ease;
   mix-blend-mode: difference;
+  transform: translateX(-30%);
+  width: 100%;
+  color: #ffffff;
+}
+@media (min-width: 700px) {
+  header .menu-header-menu-container .menu_class li:last-of-type::after {
+    content: "";
+    padding: 0px 0px;
+  }
+}
+@media (min-width: 550px) {
+  header .menu-header-menu-container .menu_class li {
+    mix-blend-mode: initial;
+  }
+}
+@media (min-width: 700px) {
+  header .menu-header-menu-container .menu_class li {
+    opacity: 1;
+    transform: translateX(0%);
+    width: fit-content;
+  }
+  header .menu-header-menu-container .menu_class li::after {
+    content: "/";
+    padding: 0px 1.5625rem;
+    font-size: 1.25rem;
+    font-family: nanumGothicCodingRegular;
+  }
+}
+@media (min-width: 901px) {
+  header .menu-header-menu-container .menu_class li::after {
+    padding: 0px 1.875rem;
+  }
+}
+@media (min-width: 1100px) {
+  header .menu-header-menu-container .menu_class li::after {
+    padding: 0px 2.5rem;
+  }
 }
 header .menu-header-menu-container .menu_class li a {
   color: #ffffff;
   text-decoration: none;
-  font-size: 1.875rem;
+  font-size: 1.6875rem;
   font-family: nanumGothicCodingRegular;
   line-height: 2.8125rem;
   position: relative;
+  opacity: 1;
+  transition: 0.5s ease;
+}
+@media (min-width: 550px) {
+  header .menu-header-menu-container .menu_class li a {
+    font-size: 1.875rem;
+  }
+}
+@media (min-width: 700px) {
+  header .menu-header-menu-container .menu_class li a {
+    font-size: 1.25rem;
+  }
+}
+header .menu-header-menu-container .menu_class li a:hover {
+  opacity: 1;
+}
+header .menu-header-menu-container .menu_class li a:hover::before {
+  padding-right: 0.3125rem;
+}
+header .menu-header-menu-container .menu_class li a:hover::after {
+  padding-left: 0.3125rem;
 }
 header .menu-header-menu-container .menu_class li a::before {
   content: "(";
+  padding-right: 0rem;
+  transition: 0.3s ease;
 }
 header .menu-header-menu-container .menu_class li a::after {
   content: ")";
+  padding-left: 0rem;
+  transition: 0.3s ease;
 }
 header .menu-header-menu-container .menu_class li .sub-menu {
   height: 0px;
@@ -158,6 +291,10 @@ html,
 body {
   padding: 0px;
   margin: 0px;
+}
+
+body {
+  height: 200dvh;
 }
 
 /*# sourceMappingURL=global.css.map */

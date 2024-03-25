@@ -1,5 +1,10 @@
 header {
 
+    @include bp(tablet){
+        position: sticky;
+        top: 0px;
+    }
+
     #show_menu {
         display: none;
     }
@@ -17,6 +22,11 @@ header {
         &::before,
         &::after{
             background-color: $principal_color;
+
+            @include bp(mobileBIG){
+                background-color: $secundary_color;
+            }
+
         }
 
         &::before {
@@ -37,13 +47,20 @@ header {
 
         .menu_class {
 
-            li {
+            li.active {
+                transition: .5s ease;
                 opacity: 1;
+                transform: translateX(0%);
             }
 
             &::before{ 
 
                 background-color: $principal_color;
+
+                @include bp(mobileBIG){
+                    background-color: $principal_color_transparent;
+                    backdrop-filter: blur(5px);
+                }
 
             }
 
@@ -63,6 +80,10 @@ header {
 
     }
 
+    .show_menu_mobile.active{
+        pointer-events: none;
+    }
+
     .show_menu_mobile {
 
         cursor: pointer;
@@ -78,6 +99,15 @@ header {
         transform: rotate3d(1, 1, 1, 0deg);
         transition: 1s ease;
         mix-blend-mode: difference;
+
+        @include bp(mobileBIG){
+            mix-blend-mode: initial;
+        }
+
+        @include bp(tablet){
+            display: none;
+        }
+        
         
         &::before,
         &::after{
@@ -89,6 +119,7 @@ header {
             transition: .5s ease;
             transform: translateY(rem(0px)) rotate(0deg);
             border-radius: 20px;
+
         }
 
         hr {
@@ -115,6 +146,25 @@ header {
         z-index: 99;
         pointer-events: none;
 
+        @include bp(tablet){
+            position: relative;
+            width: initial;
+            height: initial;
+            pointer-events: initial;
+            background-color: $secundary_color;
+            display: flex;
+            justify-content: center;
+            padding: rem(10px);
+        }
+
+        @include bp(tabletMD){
+            padding: rem(12px);
+        }
+
+        @include bp(laptop){
+            padding: rem(15px);
+        }
+
         ul {
 
             list-style: none;
@@ -133,6 +183,26 @@ header {
             padding: rem(30px);
             list-style: none;
 
+            &:hover {
+
+                @include bp(tablet){
+
+                    a {
+
+                        opacity: 0.5;
+    
+                    }
+                    
+                }
+
+            }
+
+            @include bp(tablet){
+                flex-flow: row;
+                padding: rem(0px);
+                width: fit-content;
+            }
+
             &::before,
             &::after{
                 
@@ -141,6 +211,10 @@ header {
                 top: 0%;
                 left: 0%;
                 z-index: -1;
+
+                @include bp(tablet){
+                    display: none;
+                }
 
             }
 
@@ -164,24 +238,99 @@ header {
             li {
 
                 opacity: 0;
-                transition: 1.5s ease;
+                transition: .2s ease;
                 mix-blend-mode: difference;
+                transform: translateX(-30%);
+                width: 100%;
+                color: $principal_color;
+
+                &:last-of-type {
+                    
+                    @include bp(tablet){
+                        &::after{
+                            content:  "";
+                            padding: 0px 0px;
+                        }
+                    }
+
+                }
+
+                @include bp(mobileBIG){
+                    mix-blend-mode: initial;
+                }
+
+                @include bp(tablet){
+                    opacity: 1;
+                    transform: translateX(0%);
+                    width: fit-content;
+                    
+                    &::after{
+                        content:  "/";
+                        padding: 0px rem(25px);
+                        font-size: rem(20px);
+                        font-family: $font_quaternary;
+                    }
+
+                }
+
+                @include bp(tabletMD){
+                    
+                    &::after{
+                        padding: 0px rem(30px);
+                    }
+
+                }
+
+                @include bp(laptop){
+                    
+                    &::after{
+                        padding: 0px rem(40px);
+                    }
+
+                }
 
                 a {
                     
                     color: $principal_color;
                     text-decoration: none;
-                    font-size: rem(30px);
+                    font-size: rem(27px);
                     font-family: $font_quaternary;
                     line-height: rem(45px);
                     position: relative;
+                    opacity: 1;
+                    transition: .5s ease;
+
+                    @include bp(mobileBIG){
+                        font-size: rem(30px);
+                    }
+
+                    @include bp(tablet){
+                        font-size: rem(20px);
+                    }
+
+                    &:hover{
+
+                        opacity: 1;
+
+                        &::before {
+                            padding-right: rem(5px);
+                        }
+
+                        &::after {
+                            padding-left: rem(5px);
+                        }
+                    }
                     
                     &::before {
                         content: "(";
+                        padding-right: rem(0px);
+                        transition: .3s ease;
                     }
 
                     &::after {
                         content: ")";
+                        padding-left: rem(0px);
+                        transition: .3s ease;
                     }
 
                 }

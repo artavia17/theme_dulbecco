@@ -26,7 +26,7 @@
 
     <header>
         <input type="checkbox" name="show_menu" id="show_menu">
-        <label for="show_menu" class="show_menu_mobile">
+        <label for="show_menu" class="show_menu_mobile" disabled>
             <hr>
         </label>
         <?php
