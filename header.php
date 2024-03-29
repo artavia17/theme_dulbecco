@@ -24,7 +24,10 @@
         }
     ?>
 
-    <header>
+    <nav>
+        <section class="logo" json="<?php echo get_template_directory_uri(); ?>/lottie/json/data.json">
+            <section id="dulbecco_svg"></section>
+        </section>
         <input type="checkbox" name="show_menu" id="show_menu">
         <label for="show_menu" class="show_menu_mobile" disabled>
             <hr>
@@ -32,10 +35,11 @@
         <?php
             wp_nav_menu( 
                 array(
-                    'theme_location' => 'menu-header',
+                    'theme_location' => 'menu-nav',
                     'menu_class' => 'menu_class' 
                 )
             );
         ?>
-    </header>
+
+    </nav>
     

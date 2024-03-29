@@ -1,16 +1,64 @@
-<?= get_header() ?>
+<?php 
+    echo get_header();
 
-What is Lorem Ipsum?
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    // Mods Front pages
+    $video = get_theme_mod('home-asset-settings');
+    $year = get_theme_mod('home-year-setting');
+    $profesion = get_theme_mod('home-profesion-setting');
+    $pais = get_theme_mod('home-pais-setting');
+    $video_extension = '';
+    $video_all_extensions = array('mp4', 'webm', 'ogg');
+    if($video){
+        $video_path_info = pathinfo($video);
+        $video_extension = $video_path_info['extension'];
+    }
 
-Why do we use it?
-It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+?>
 
-
-Where does it come from?
-Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
-
-The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.
+<header class="home">
+    <section class="background">
+        <?php
+            if(in_array($video_extension, $video_all_extensions)){
+            ?>  
+                <div class="blur">
+                    <video autoplay loop muted playsinline>
+                        <source src="<?= $video ?>" type="video/<?= $video_extension ?>"/>
+                    </video>
+                </div>
+            <?php
+            }
+        ?>
+    </section>
+    <section class="content">
+        <section class="logo">
+            <span>Archive by</span>
+            <section id="svg_header" json="<?php echo get_template_directory_uri(); ?>/lottie/json/data.json"></section>
+        </section>
+        <ul class="responsive-box">
+            <?php
+                if($year){
+                ?>
+                    <li><p class="barra"><?= $year ?></p></li>
+                <?php
+                }
+            ?>
+            <?php
+                if($profesion){
+                ?>
+                    <li><p class="llaves"><?= $profesion ?></p></li>
+                <?php
+                }
+            ?>
+            <?php
+                if($pais){
+                ?>
+                    <li><p class="barra"><?= $pais ?></p></li>
+                <?php
+                }
+            ?>
+        </ul>
+    </section>
+</header>
 
 <?= get_footer() ?>
 

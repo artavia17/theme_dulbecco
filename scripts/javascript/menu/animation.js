@@ -1,6 +1,6 @@
-const MenuAnimation = () => {
-    const checkItem = document.querySelector('#show_menu');
-    const buttonCheckItem = document.querySelector('.show_menu_mobile');
+const MenuAnimation = (html) => {
+    const checkItem = html.show_menu_tag;
+    const buttonCheckItem = html.show_menu_mobile_tag;
     if (checkItem && buttonCheckItem) {
         checkItem.onchange = () => {
             buttonCheckItem.classList.add('active');
@@ -8,19 +8,19 @@ const MenuAnimation = () => {
                 buttonCheckItem.classList.remove('active');
             }, 700);
             if (checkItem.checked) {
-                setTimeout(() => recorrerItems(), 500);
+                setTimeout(() => recorrerItems(html), 500);
             }
             else {
-                recorrerItems();
+                recorrerItems(html);
             }
         };
     }
 };
-const recorrerItems = () => {
-    const header = document.querySelectorAll('header .menu-header-menu-container .menu_class li');
+const recorrerItems = (html) => {
+    const nav = html.nav_menu_list_tag;
     let timeOut = 0;
-    if (header.length) {
-        header.forEach((e) => {
+    if (nav.length) {
+        nav.forEach((e) => {
             setTimeout(() => {
                 e.classList.toggle('active');
             }, timeOut);

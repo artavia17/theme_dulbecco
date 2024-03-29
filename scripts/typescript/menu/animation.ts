@@ -1,7 +1,7 @@
-const MenuAnimation = () => {
+const MenuAnimation = (html : any) => {
 
-    const checkItem : HTMLInputElement | null = document.querySelector('#show_menu');
-    const buttonCheckItem : HTMLInputElement | null = document.querySelector('.show_menu_mobile');
+    const checkItem : HTMLInputElement | null = html.show_menu_tag;
+    const buttonCheckItem : HTMLInputElement | null = html.show_menu_mobile_tag;
 
     if(checkItem && buttonCheckItem){
         checkItem.onchange = () => {
@@ -14,10 +14,10 @@ const MenuAnimation = () => {
 
             if(checkItem.checked){
 
-                setTimeout(()=> recorrerItems(),500);
+                setTimeout(()=> recorrerItems(html),500);
 
             }else {
-                recorrerItems()
+                recorrerItems(html)
             }
 
         }
@@ -26,14 +26,14 @@ const MenuAnimation = () => {
 }
 
 
-const recorrerItems = () => {
+const recorrerItems = (html : any) => {
 
-    const header : NodeListOf<HTMLElement> = document.querySelectorAll('header .menu-header-menu-container .menu_class li');
+    const nav : NodeListOf<HTMLElement> = html.nav_menu_list_tag;
     let timeOut : number = 0;
 
-    if(header.length){
+    if(nav.length){
 
-        header.forEach(( e : HTMLElement ) => {
+        nav.forEach(( e : HTMLElement ) => {
 
             setTimeout(() => {
                 e.classList.toggle('active');

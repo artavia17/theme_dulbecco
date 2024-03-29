@@ -1,8 +1,123 @@
-header {
+nav.active{
+
+    background-color: $secundary_color; 
+    transform: translateY(20px);
+    margin: 0px 15px;
+    width: calc(100% - 70px);
+    border-radius: 15px;
+
+    @include bp(tablet){
+        padding: 10px 0px;
+        width: 100%;
+        margin: auto;
+        max-width: 675px;
+    }
+
+    @include bp(tabletMD){
+        max-width: 850px;
+        padding: 12px 0px;
+    }
+
+    @include bp(laptop){
+        max-width: 1000px;
+    }
+
+    @include bp(laptopBIG){
+        max-width: 1200px;
+    }
+
+    @include bp(escritorio){
+        max-width: 1300px;
+    }
+
+
+    .logo{
+        opacity: 1;
+    }
+
+    .show_menu_mobile{
+        hr,
+        &::after,
+        &::before{
+            background-color: $principal_color;
+        }
+    }
+
+    .menu-header-menu-container{
+        transform: translate(-16px, -21px);
+
+        @include bp(tablet){
+            transform: translate(0px, 0px);
+        }
+    }
+
+}
+
+nav {
+
+    z-index: 9999;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: .5s ease;
+    width: calc(100% - 40px);
+    padding: 20px;
+    transform: translateY(0px);
+    border-radius: 0px;
 
     @include bp(tablet){
         position: sticky;
         top: 0px;
+        background: $secundary_color;
+        padding: 15px 20px;
+        justify-content: center;
+        max-width: 100%;
+        margin: auto;
+    }
+
+
+    .logo{
+        opacity: 0;
+        transition: .2s ease;
+        color: $principal_color;
+
+        @include bp(tablet){
+            display: none;
+        }
+
+        #dulbecco_svg {
+
+            height: rem(35px);
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            svg {
+
+                height: rem(120px) !important;
+
+                @include bp(mobileBIG){
+                    height: rem(127px) !important;
+                }
+
+                path {
+
+                    stroke: $principal_color;
+
+                }
+
+            }
+
+            svg > g {
+                transform: translateX(-15%);
+            }
+
+        }
+
     }
 
     #show_menu {
@@ -12,6 +127,11 @@ header {
     #show_menu:checked ~ .show_menu_mobile {
 
         transform: rotate3d(1, 1, 1, 360deg);
+        mix-blend-mode: difference;
+
+        @include bp(mobileBIG){
+            mix-blend-mode: initial;
+        }
 
         hr{
         
@@ -57,10 +177,6 @@ header {
 
                 background-color: $principal_color;
 
-                @include bp(mobileBIG){
-                    background-color: $principal_color_transparent;
-                    backdrop-filter: blur(5px);
-                }
 
             }
 
@@ -88,9 +204,6 @@ header {
 
         cursor: pointer;
         z-index: 9999;
-        position: fixed;
-        top: rem(20px);
-        right: rem(20px);
         width: rem(40px);
         height: rem(30px);
         display: flex;
@@ -98,7 +211,6 @@ header {
         justify-content: space-between;
         transform: rotate3d(1, 1, 1, 0deg);
         transition: 1s ease;
-        mix-blend-mode: difference;
 
         @include bp(mobileBIG){
             mix-blend-mode: initial;
@@ -145,24 +257,16 @@ header {
         height: 100dvh;
         z-index: 99;
         pointer-events: none;
+        transition: .4s ease;
 
         @include bp(tablet){
             position: relative;
             width: initial;
             height: initial;
             pointer-events: initial;
-            background-color: $secundary_color;
             display: flex;
             justify-content: center;
-            padding: rem(10px);
-        }
-
-        @include bp(tabletMD){
-            padding: rem(12px);
-        }
-
-        @include bp(laptop){
-            padding: rem(15px);
+            padding: rem(0px);
         }
 
         ul {

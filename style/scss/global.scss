@@ -1,5 +1,6 @@
 @import './vars';
-@import './components/header';
+@import './components/nav';
+@import './pages/home/header';
 
 *,
 html,
@@ -10,7 +11,28 @@ body{
 
 
 body {
-
     height: 200dvh;
+}
 
+.responsive-box {
+
+    @include bp(tablet){
+        max-width: 675px;
+    }
+
+    @include bp(tabletMD){
+        max-width: 850px;
+    }
+
+    @include bp(laptop){
+        max-width: 1000px;
+    }
+
+    @include bp(laptopBIG){
+        max-width: 1200px;
+    }
+
+    @include bp(escritorio){
+        max-width: 1300px;
+    }
 }
