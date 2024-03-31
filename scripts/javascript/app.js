@@ -3,10 +3,12 @@ import MenuAnimation from "./menu/animation.js";
 import scrollAnimation from "./menu/scrollAnimation.js";
 import tags from "./tags/tags.js";
 import headerVideo from "./front-page/header.js";
+import SwiperConfig from "./front-page/swiper.js";
 const html = tags();
+loadPage();
 window.addEventListener('DOMContentLoaded', () => {
     MenuAnimation(html);
-    loadPage();
+    SwiperConfig();
     if (html.videoFrontPage && html.canvaVideoFrontPage) {
         headerVideo(html.videoFrontPage, html.canvaVideoFrontPage);
     }

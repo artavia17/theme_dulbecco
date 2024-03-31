@@ -38,6 +38,16 @@
         
     add_action('wp_enqueue_scripts', 'lottieScript');
 
+    /**
+     * Style Swiper
+     */
+
+     function swiper_scripts() {
+        wp_enqueue_style( 'style_swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+        wp_enqueue_script("swiper_import", 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js', array(), null, true);
+    }
+    
+    add_action('wp_enqueue_scripts', 'swiper_scripts');
 
     /**
      * Habilitamos el menu en el tema
@@ -61,3 +71,9 @@
     }
 
     add_action('customize_register', 'customRegister');
+
+    /**
+     * Habilitamos la imagen destada de los post
+     */
+
+     add_theme_support( 'post-thumbnails' );

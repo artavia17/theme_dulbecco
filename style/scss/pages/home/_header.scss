@@ -103,9 +103,21 @@ header.home{
 
             }
 
+            #svg_header.light{
+
+                svg {
+
+                    path {
+                        stroke: $secundary_color !important;
+                        transition: .4s ease;
+                    }
+                }
+            }
+
             #svg_header {
 
                 overflow: hidden;
+                z-index: 999999;
 
                 @include bp(mobileBIG){
                     display: flex;
@@ -136,6 +148,10 @@ header.home{
 
 
                 svg {
+
+                    path {
+                        stroke: $principal_color !important;
+                    }
 
                     @include bp(mobileBIG){
                         height: rem(500px) !important;

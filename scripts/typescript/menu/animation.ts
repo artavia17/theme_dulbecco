@@ -2,6 +2,7 @@ const MenuAnimation = (html : any) => {
 
     const checkItem : HTMLInputElement | null = html.show_menu_tag;
     const buttonCheckItem : HTMLInputElement | null = html.show_menu_mobile_tag;
+    const body : HTMLElement = document.body;
 
     if(checkItem && buttonCheckItem){
         checkItem.onchange = () => {
@@ -13,11 +14,11 @@ const MenuAnimation = (html : any) => {
             }, 700)
 
             if(checkItem.checked){
-
                 setTimeout(()=> recorrerItems(html),500);
-
+                body.style.overflow = 'hidden';
             }else {
                 recorrerItems(html)
+                body.style.overflow = 'initial';
             }
 
         }

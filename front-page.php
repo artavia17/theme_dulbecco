@@ -13,6 +13,15 @@
         $video_extension = $video_path_info['extension'];
     }
 
+    // Posteos del slider, solo se obtienen los ultimos 7 post
+
+    $args_post = array(
+        'post_type'      => 'post',
+        'posts_per_page' => 7,
+    );
+    $query_post = new WP_Query( $args_post );
+
+
 ?>
 
 <header class="home">
@@ -59,6 +68,13 @@
         </ul>
     </section>
 </header>
+<main>
+    <?php
+        if ( $query_post->have_posts() ) {
+            include(get_stylesheet_directory() . '/components/home/recent-post.php');
+        }
+    ?>
+</main>
 
 <?= get_footer() ?>
 

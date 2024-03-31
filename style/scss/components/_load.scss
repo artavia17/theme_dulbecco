@@ -1,0 +1,91 @@
+.load_page.remove{
+    opacity: 0;
+    pointer-events: none;
+}
+
+.load_page {
+
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: calc(100dvw - 40px);
+    height: calc(100dvh - 40px);
+    background-color: $terciary_color;
+    z-index: 9999;
+    display: flex;
+    align-items: flex-end;
+    padding: rem(20px);
+    opacity: 1;
+    transition: .5s ease;
+
+    .box.remove {
+        opacity: 0;
+    }
+
+    .box {
+
+        display: flex;
+        column-gap: rem(10px);
+        height: rem(70px);
+        overflow: hidden;
+        opacity: 1;
+        transition: .5s ease;
+
+        @include bp(mobileBIG){
+            height: rem(75px);
+        }
+
+        @include bp(tablet){
+            height: rem(80px);
+        }
+
+        @include bp(tablet){
+            height: rem(85px);
+        }
+
+        @include bp(laptop){
+            height: rem(90px);
+        }
+
+        @include bp(escritorio){
+            height: rem(95px);
+        }
+
+        div {
+
+            transition: .2s ease;
+
+            .item{
+                height: 100%;
+                font-size: rem(70px);
+                font-family: $font_tertiary;
+                font-weight: bold;
+                color: $principal_color;
+
+                @include bp(mobileBIG){
+                    font-size: rem(75px);
+                }
+
+                @include bp(tablet){
+                    font-size: rem(80px);
+                }
+
+                @include bp(tabletMD){
+                    font-size: rem(85px);
+                }
+
+                @include bp(laptop){
+                    font-size: rem(90px);
+                }
+
+                @include bp(escritorio){
+                    font-size: rem(95px);
+                }
+
+            }
+
+        }
+
+    }
+
+}

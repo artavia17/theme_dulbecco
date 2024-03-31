@@ -1,6 +1,8 @@
 @import './vars';
 @import './components/nav';
 @import './pages/home/header';
+@import './components/load';
+@import './pages/home/recent';
 
 *,
 html,
@@ -9,12 +11,17 @@ body{
     margin: 0px;
 }
 
+html {
+    scrollbar-gutter: stable;
+}
 
 body {
-    height: 200dvh;
+    height: 200vh;
 }
 
 .responsive-box {
+
+    max-width: calc(100% - 30px);
 
     @include bp(tablet){
         max-width: 675px;
@@ -35,4 +42,11 @@ body {
     @include bp(escritorio){
         max-width: 1300px;
     }
+}
+
+.subtitle {
+
+    font-size: rem(40px);
+    text-wrap: balance;
+
 }

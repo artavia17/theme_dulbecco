@@ -1,6 +1,7 @@
 const MenuAnimation = (html) => {
     const checkItem = html.show_menu_tag;
     const buttonCheckItem = html.show_menu_mobile_tag;
+    const body = document.body;
     if (checkItem && buttonCheckItem) {
         checkItem.onchange = () => {
             buttonCheckItem.classList.add('active');
@@ -9,9 +10,11 @@ const MenuAnimation = (html) => {
             }, 700);
             if (checkItem.checked) {
                 setTimeout(() => recorrerItems(html), 500);
+                body.style.overflow = 'hidden';
             }
             else {
                 recorrerItems(html);
+                body.style.overflow = 'initial';
             }
         };
     }

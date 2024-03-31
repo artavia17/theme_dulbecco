@@ -2,6 +2,8 @@
  * En este archivo ejecutamos la animacion del lottie
  */
 
+let count = 0;
+
 window.addEventListener('DOMContentLoaded', () => {
     header();
 })
@@ -18,23 +20,28 @@ const header = () => {
 
         const json_data = headerID.getAttribute('json');
 
-        lottie.loadAnimation({
+        setTimeout(() => {
 
-            container: document.getElementById('svg_header'),
-            autoplay: true,
-            loop: false,
-            renderer: 'svg',
-            path: json_data,
-            rendererSettings: {
-                filterSize: {
-                    width: 'auto',
-                    height: 'auto',
-                    x: '0%',
-                    y: '0%',
-                }
-            }
-            })
-            .setSubframe(false);
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "smooth",
+            });
+
+            lottieCreate('svg_header', json_data);
+
+            setTimeout(()=>{
+
+                headerID.classList.add('light');
+
+                setTimeout(() => {
+                    headerID.style.zIndex = '1'
+                }, 500);
+
+            }, 2100)
+
+        }, 2100);
+
     }
 
 
@@ -62,33 +69,44 @@ const scrollAnimation = () => {
 
             if(!svg){
 
-                lottie.loadAnimation({
-                    container: document.getElementById('dulbecco_svg'),
-                    autoplay: true,
-                    loop: false,
-                    renderer: 'svg',
-                    path: jsonAttribute,
-                    rendererSettings: {
-                        filterSize: {
-                            width: 'auto',
-                            height: 'auto',
-                            x: '0%',
-                            y: '0%',
-                        }
-                    }
-                    })
-                    .setSubframe(false);
-                    
+                count += 1;
+
+                if(count == 1){
+                    lottieCreate('dulbecco_svg', jsonAttribute);
+                }
+
             }
 
         }else{
             elementnav.classList.remove('active');
             if(svg){
                 svg.remove();
+                count = 0;
             }
         }
 
         
     }
 
+}
+
+
+const lottieCreate = (tagElement, json) => {
+
+    lottie.loadAnimation({
+        container: document.getElementById(tagElement),
+        autoplay: true,
+        loop: false,
+        renderer: 'svg',
+        path: json,
+        rendererSettings: {
+            filterSize: {
+                width: 'auto',
+                height: 'auto',
+                x: '0%',
+                y: '0%',
+            }
+        }
+        })
+        .setSubframe(false);
 }

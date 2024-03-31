@@ -1,0 +1,121 @@
+.recent_proyect {
+
+    h2 {
+        margin: rem(20px) auto rem(20px) auto;
+        text-align: center;
+        font-family: $font_secundary;
+        font-weight: bold; 
+        font-size: rem(25px);
+
+        @include bp(mobileBIG){
+            font-size: rem(30px);
+            margin: rem(20px) auto rem(25px) auto;
+        }
+
+        @include bp(tablet){
+            font-size: rem(35px);
+            margin: rem(20px) auto rem(30px) auto;
+        }
+
+        @include bp(tabletMD){
+            font-size: rem(40px);
+            font-weight: normal;
+            margin: rem(20px) auto rem(35px) auto;
+        }
+
+        @include bp(laptop){
+            font-size: rem(45px);
+            margin: rem(20px) auto rem(40px) auto;
+        }
+
+        @include bp(laptopBIG){
+            font-size: rem(47px);
+            margin: rem(20px) auto rem(44px) auto;
+        }
+
+        @include bp(escritorio){
+            font-size: rem(50px);
+            margin: rem(20px) auto rem(50px) auto;
+        }
+
+    }
+
+    .proyect_slider {
+
+        .proyectItem {
+
+            text-decoration: none;
+
+            .img {
+
+                width: 100%;
+                height: rem(300px);
+                overflow: hidden;
+
+                @include bp(mobileBIG){
+                    height: rem(350px);
+                }
+
+                @include bp(tablet){
+                    height: rem(250px);
+                }
+
+                @include bp(tabletMD){
+                    height: rem(250px);
+                }
+
+                @include bp(laptop){
+                    height: rem(200px);
+                }
+
+                @include bp(laptopBIG){
+                    height: rem(300px);
+                }
+
+                @include bp(escritorio){
+                    height: rem(250px);
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+
+            }
+
+            .content {
+
+                display: flex;
+                flex-flow: row;
+                align-items: center;
+                column-gap: rem(10px);
+                margin-top: rem(10px);
+                justify-content: space-between;
+
+                h3 {
+                    text-wrap: balance;
+                    font-family: $font_secundary;
+                    font-size: rem(17px);
+                    color: $secundary_color;
+                }
+
+                button {
+                    text-wrap: nowrap;
+                    font-family: $font_quaternary;
+                    text-decoration: none;
+                    font-size: rem(17px);
+                    background-color: $secundary_color;
+                    color: $principal_color;
+                    padding: rem(7px) rem(12px);
+                    border: 1px solid transparent;
+                }
+
+            }
+
+        }
+
+    }
+
+}
