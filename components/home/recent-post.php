@@ -2,7 +2,7 @@
     <h2 class="responsive-box subtitle">Recent projects</h2>
 
 
-    <swiper-container class="proyect_slider" slides-per-view="1.5" space-between="20" centered-slides="true">
+    <swiper-container class="proyect_slider" slides-per-view="1.5" space-between="20" centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">
         <?php
             while ( $query_post->have_posts() ) {
                 $query_post->the_post();

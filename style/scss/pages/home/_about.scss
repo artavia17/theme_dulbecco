@@ -1,0 +1,159 @@
+.box-about-home {
+
+    margin: rem(20px) auto rem(20px) auto;
+
+    @include bp(mobileBIG){
+        margin: rem(30px) auto rem(40px) auto;
+    }
+
+    @include bp(tablet){
+        margin: rem(35px) auto rem(40px) auto;
+    }
+
+    @include bp(tabletMD){
+        margin: rem(40px) auto rem(40px) auto;
+    }
+
+    @include bp(laptop){
+        margin: rem(45px) auto rem(40px) auto;
+    }
+
+    @include bp(laptopBIG){
+        margin: rem(50px) auto rem(40px) auto;
+    }
+
+    @include bp(escritorio){
+        margin: rem(55px) auto rem(40px) auto;
+    };
+
+
+    h2 {
+
+        margin: rem(20px) auto rem(20px) auto;
+        text-align: center;
+        font-family: $font_secundary;
+        font-weight: bold; 
+        font-size: rem(35px);
+
+        &::after,
+        &::before{
+            font-size: rem(60px);
+            display: inline-block;
+            transform: translateY(5px);
+
+            @include bp(mobileBIG){
+                font-size: rem(70px);
+            }
+    
+            @include bp(tablet){
+                font-size: rem(80px);
+            }
+    
+            @include bp(tabletMD){
+                font-size: rem(90px);
+            }
+    
+            @include bp(laptop){
+                font-size: rem(100px);
+            }
+    
+            @include bp(laptopBIG){
+                font-size: rem(110px);
+            }
+    
+            @include bp(escritorio){
+                font-size: rem(120px);
+            };
+
+        }
+
+        &::before{
+            content: '{';
+            margin-right: rem(15px);
+        }
+
+        &::after{
+            content: '}';
+            margin-left: rem(15px);
+        }
+
+        @include bp(mobileBIG){
+            font-size: rem(45px);
+            margin: rem(0px) auto rem(25px) auto;
+        }
+
+        @include bp(tablet){
+            font-size: rem(55px);
+            margin: rem(0px) auto rem(30px) auto;
+        }
+
+        @include bp(tabletMD){
+            font-size: rem(65px);
+            margin: rem(0px) auto rem(35px) auto;
+        }
+
+        @include bp(laptop){
+            font-size: rem(75px);
+            margin: rem(0px) auto rem(40px) auto;
+        }
+
+        @include bp(laptopBIG){
+            font-size: rem(85px);
+            margin: rem(0px) auto rem(44px) auto;
+        }
+
+        @include bp(escritorio){
+            font-size: rem(95px);
+            margin: rem(0px) auto rem(50px) auto;
+        };
+
+    }
+
+    .content {
+
+        font-size: rem(18px);
+        color: $terciary_color;
+        text-wrap: balance;
+        font-family: $font_quaternary;
+        font-weight: 500;
+        line-height: rem(20px);
+        text-align: center !important;
+
+        @include bp(mobileBIG){
+            font-size: rem(20px);
+            line-height: rem(25px);
+        }
+
+        @include bp(tablet){
+            font-size: rem(22px);
+            line-height: rem(27px);
+        }
+
+        // @include bp(tabletMD){
+        //     font-size: rem(23px);
+        //     line-height: rem(29px);
+        // }
+
+        // @include bp(laptop){
+        //     font-size: rem(25px);
+        //     line-height: rem(30px);
+        //     text-align: left;
+        // }
+
+        p {
+            @include bp(laptop){
+                text-align: left !important;
+            }   
+        }
+
+        // @include bp(laptopBIG){
+        //     font-size: rem(85px);
+        // }
+
+        // @include bp(escritorio){
+        //     font-size: rem(95px);
+        // };
+
+    }
+
+}

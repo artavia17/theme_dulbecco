@@ -21,6 +21,12 @@
     );
     $query_post = new WP_Query( $args_post );
 
+    // Obtenemos el about
+    $about = get_theme_mod('home-about-my-work-setting');
+
+    // Education
+    $education = get_theme_mod('home-education-setting');
+
 
 ?>
 
@@ -73,6 +79,15 @@
         if ( $query_post->have_posts() ) {
             include(get_stylesheet_directory() . '/components/home/recent-post.php');
         }
+
+        if($about){
+            include(get_stylesheet_directory() . '/components/home/about.php');
+        }
+
+        if($education){
+            include(get_stylesheet_directory() . '/components/home/education.php');
+        }
+
     ?>
 </main>
 

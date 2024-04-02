@@ -3,6 +3,8 @@
 @import './pages/home/header';
 @import './components/load';
 @import './pages/home/recent';
+@import './pages/home/about';
+@import './pages/home/education';
 
 *,
 html,
@@ -13,10 +15,6 @@ body{
 
 html {
     scrollbar-gutter: stable;
-}
-
-body {
-    height: 200vh;
 }
 
 .responsive-box {

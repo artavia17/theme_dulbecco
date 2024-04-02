@@ -1,5 +1,7 @@
 <?php
 
+    include(get_stylesheet_directory() . '/custom-registers/editor/wp_editor.php');
+
     /**
      * Configuracion del front page
      */
@@ -71,3 +73,60 @@
             'placeholder' => __('Escriba aquí'),
         ),
     ));
+
+
+    // About my word
+    $wp_customize->add_setting('home-about-my-work-setting', array(
+        'capability' => 'edit_theme_options'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Teeny_Control($wp_customize, 'home-about-my-work-control', array(
+        'label' => __('About my work'),
+        'section' => 'front-page-section',
+        'settings' => 'home-about-my-work-setting'
+    )));
+
+    // Education
+    $wp_customize->add_setting('home-education-setting', array(
+        'capability' => 'edit_theme_options'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Teeny_Control($wp_customize, 'home-education-control', array(
+        'label' => __('Education'),
+        'section' => 'front-page-section',
+        'settings' => 'home-education-setting'
+    )));
+
+    // Juournal articles
+    $wp_customize->add_setting('home-juournal-setting', array(
+        'capability' => 'edit_theme_options'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Teeny_Control($wp_customize, 'home-juournal-control', array(
+        'label' => __('Juournal articles'),
+        'section' => 'front-page-section',
+        'settings' => 'home-juournal-setting'
+    )));
+
+
+    // Book chapters
+    $wp_customize->add_setting('home-book-setting', array(
+        'capability' => 'edit_theme_options'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Teeny_Control($wp_customize, 'home-book-control', array(
+        'label' => __('Book chapters'),
+        'section' => 'front-page-section',
+        'settings' => 'home-book-setting'
+    )));
+
+    // Group exhibitions
+    $wp_customize->add_setting('home-group-setting', array(
+        'capability' => 'edit_theme_options'
+    ));
+
+    $wp_customize->add_control(new WP_Customize_Teeny_Control($wp_customize, 'home-group-control', array(
+        'label' => __('Group exhibitions'),
+        'section' => 'front-page-section',
+        'settings' => 'home-group-setting'
+    )));

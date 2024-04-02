@@ -13,6 +13,10 @@ const SwiperConfig = () => {
                     spaceBetween: 40,
                 },
                 1100: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 30,
+                },
+                1600: {
                     slidesPerView: 3.5,
                     spaceBetween: 30,
                 },
