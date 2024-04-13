@@ -5,12 +5,20 @@
 @import './pages/home/recent';
 @import './pages/home/about';
 @import './pages/home/education';
+@import './pages/home/juournal';
+@import './pages/home/book';
+@import './pages/home/group'; 
+@import './components/footer';
 
 *,
 html,
 body{
     padding: 0px;
     margin: 0px;
+}
+
+.letter {
+    display: inline-block;
 }
 
 html {

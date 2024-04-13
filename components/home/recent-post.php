@@ -1,5 +1,5 @@
 <section class="recent_proyect">
-    <h2 class="responsive-box subtitle">Recent projects</h2>
+    <h2 class="responsive-box subtitle" data-aos="fade-up">Recent projects</h2>
 
 
     <swiper-container class="proyect_slider" slides-per-view="1.5" space-between="20" centered-slides="true" autoplay-delay="2500" autoplay-disable-on-interaction="false">

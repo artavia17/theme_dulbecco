@@ -1,0 +1,95 @@
+.box-book-home {
+
+    margin: rem(70px) auto rem(0px) auto;
+
+    @include bp(mobileBIG){
+        margin: rem(30px) auto rem(0px) auto;
+    }
+
+    @include bp(tablet){
+        margin: rem(35px) auto rem(0px) auto;
+    }
+
+    @include bp(tabletMD){
+        margin: rem(40px) auto rem(0px) auto;
+    }
+
+    @include bp(laptop){
+        margin: rem(45px) auto rem(0px) auto;
+    }
+
+    @include bp(laptopBIG){
+        margin: rem(50px) auto rem(0px) auto;
+    }
+
+    @include bp(escritorio){
+        margin: rem(55px) auto rem(0px) auto; 
+    };
+
+
+    .header {
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h3 {
+
+            font-family: $font_secundary;
+            font-weight: bold; 
+            font-size: rem(32px);
+            color: $secundary_color;
+            margin-bottom: rem(25px);
+    
+    
+            @include bp(mobileBIG){
+                font-size: rem(37px);
+            }
+    
+            @include bp(tablet){
+                font-size: rem(43px);
+            }
+    
+            @include bp(tabletMD){
+                font-size: rem(47px);
+            }
+    
+            @include bp(laptop){
+                font-size: rem(53px);
+            }
+    
+            @include bp(laptopBIG){
+                font-size: rem(57px);
+            }
+    
+            @include bp(escritorio){
+                font-size: rem(63px);
+            };
+
+    
+        }
+
+    }
+
+    .content {
+
+        font-size: rem(16px);
+        color: $terciary_color;
+        text-wrap: balance;
+        font-family: $font_quaternary;
+        font-weight: 500;
+        line-height: rem(30px);
+
+        @include bp(mobileBIG){
+            font-size: rem(18px);
+        }
+
+        @include bp(tablet){
+            font-size: rem(20px);
+            line-height: rem(25px);
+        }
+
+
+    }
+
+}

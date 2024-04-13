@@ -27,6 +27,15 @@
     // Education
     $education = get_theme_mod('home-education-setting');
 
+    // Juournal articles
+    $juournal = get_theme_mod('home-juournal-setting');
+
+    // Book Chapters
+    $book = get_theme_mod('home-book-setting');
+
+    // Group exhibitions
+    $group = get_theme_mod('home-group-setting');
+
 
 ?>
 
@@ -86,6 +95,18 @@
 
         if($education){
             include(get_stylesheet_directory() . '/components/home/education.php');
+        }
+
+        if($juournal){
+            include(get_stylesheet_directory() . '/components/home/juournal.php');
+        }
+
+        if($book){
+            include(get_stylesheet_directory() . '/components/home/book.php');
+        }
+
+        if($group){
+            include(get_stylesheet_directory() . '/components/home/group.php');
         }
 
     ?>

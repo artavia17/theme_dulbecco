@@ -39,6 +39,18 @@
     add_action('wp_enqueue_scripts', 'lottieScript');
 
     /**
+     * Agregarmos el aos.js
+     */
+
+     function aosScript(){
+        wp_enqueue_style( 'aosStyle', 'https://unpkg.com/aos@next/dist/aos.css');
+        wp_enqueue_script("aos_js", "https://unpkg.com/aos@next/dist/aos.js");
+        wp_enqueue_script("aos_config", get_template_directory_uri()."/anime.js/config.js");
+    }
+        
+    add_action('wp_enqueue_scripts', 'aosScript');
+
+    /**
      * Style Swiper
      */
 

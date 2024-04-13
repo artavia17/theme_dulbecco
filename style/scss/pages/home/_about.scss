@@ -32,7 +32,7 @@
         margin: rem(20px) auto rem(20px) auto;
         text-align: center;
         font-family: $font_secundary;
-        font-weight: bold; 
+        font-weight: normal; 
         font-size: rem(35px);
 
         &::after,
@@ -40,6 +40,7 @@
             font-size: rem(60px);
             display: inline-block;
             transform: translateY(5px);
+            font-weight: bold; 
 
             @include bp(mobileBIG){
                 font-size: rem(70px);

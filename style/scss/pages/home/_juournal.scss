@@ -1,6 +1,6 @@
-.box-education-home {
+.box-juournal-home {
 
-    margin: rem(40px) auto rem(40px) auto;
+    margin: rem(0px) auto rem(40px) auto;
 
     @include bp(mobileBIG){
         margin: rem(30px) auto rem(40px) auto;
@@ -23,7 +23,7 @@
     }
 
     @include bp(escritorio){
-        margin: rem(55px) auto rem(40px) auto; 
+        margin: rem(55px) auto rem(40px) auto;
     };
 
     .header {
@@ -31,12 +31,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin: rem(0px) 0px rem(20px) 0px;
-
-        @include bp(mobileBIG){
-            margin: rem(0px) 0px rem(40px) 0px;
-        }
-
 
         button{
             border-radius: 50%;
@@ -121,7 +115,7 @@
             font-size: rem(35px);
             background-color: $secundary_color;
             color: $principal_color;
-            padding: 0px rem(15px);
+            padding: rem(7px) rem(15px);
     
     
             @include bp(mobileBIG){
@@ -138,14 +132,17 @@
     
             @include bp(laptop){
                 font-size: rem(55px);
+                padding: rem(9px) rem(15px);
             }
     
             @include bp(laptopBIG){
                 font-size: rem(60px);
+                padding: rem(10px) rem(15px);
             }
     
             @include bp(escritorio){
                 font-size: rem(65px);
+                padding: rem(13px) rem(15px);
             };
     
         }
@@ -161,14 +158,104 @@
         font-family: $font_quaternary;
         font-weight: 500;
         line-height: rem(30px);
+        background-color: $secundary_color;
+        color: $principal_color;
+        padding: rem(20px) rem(20px);
+        position: relative;
 
         @include bp(mobileBIG){
             font-size: rem(20px);
+            padding: rem(40px) rem(40px);
         }
 
         @include bp(tablet){
             font-size: rem(22px);
             line-height: rem(33px);
+        }
+        
+        .father{
+            transition: .5s ease;
+        }
+
+        .show_more.active {
+
+            span {
+
+                svg {
+                    transform: rotate(-90deg);
+                }
+                
+            }
+
+        }
+
+        .show_more {
+            position: absolute;
+            bottom: rem(-47px);
+            right: 0px;
+            padding: rem(7px);
+            border: 0px;
+            background-color: $secundary_color;
+            color: $principal_color;
+            font-size: rem(18px);
+            font-family: $font_quaternary;
+            border: 1px solid $secundary_color;
+            cursor: pointer;
+            transition: .2s ease;
+            display: flex;
+            flex-flow: row;
+            align-items: center;
+            justify-content: center;
+            column-gap: 10px;
+
+            &:hover{
+                background-color: $principal_color;
+                color: $secundary_color;
+
+                span{
+                    border: 1px solid $secundary_color;
+                }
+            }
+
+            &:active{
+                background-color: $secundary_color;
+                color: $principal_color;
+
+                span{
+                    border: 1px solid $principal_color;
+                }
+
+            }
+
+            @include bp(mobileBIG){
+                font-size: rem(20px);
+            }
+    
+            @include bp(tablet){
+                font-size: rem(22px);
+            }
+
+
+            span {
+                width: 30px;
+                height: 30px;
+                border-radius: 50%;
+                border: 1px solid $principal_color;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                
+                svg {
+
+                    width: 25px;
+                    height: 25px;
+                    transition: .5s ease;
+                    transform: rotate(90deg);
+
+                }
+
+            }
+
         }
 
         strong{

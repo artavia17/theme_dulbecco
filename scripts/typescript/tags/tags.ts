@@ -2,12 +2,15 @@
 
 const tags = () => {
 
-    const show_menu_tag : HTMLInputElement | null = document.querySelector('#show_menu');
-    const show_menu_mobile_tag : HTMLInputElement | null = document.querySelector('.show_menu_mobile');
-    const nav_menu_list_tag : NodeListOf<HTMLElement> = document.querySelectorAll('nav .menu-header-menu-container .menu_class li');
-    const nav_tag : HTMLElement | null = document.querySelector('nav');
-    const videoFrontPage : HTMLVideoElement | null = document.querySelector('header.home .background video');
-    const canvaVideoFrontPage : HTMLCanvasElement | null = document.querySelector('header.home .background canvas');
+    const show_menu_tag : HTMLInputElement | null = query<HTMLInputElement>('#show_menu');
+    const show_menu_mobile_tag : HTMLInputElement | null = query<HTMLInputElement>('.show_menu_mobile');
+    const nav_menu_list_tag : NodeListOf<HTMLElement> = queryAll<HTMLElement>('nav .menu-header-menu-container .menu_class li');
+    const nav_tag : HTMLElement | null = query<HTMLElement>('nav');
+    const videoFrontPage : HTMLVideoElement | null = query<HTMLVideoElement>('header.home .background video');
+    const canvaVideoFrontPage : HTMLCanvasElement | null = query<HTMLCanvasElement>('header.home .background canvas');
+    const textJournalHome : HTMLElement | null = query<HTMLElement>('.box-juournal-home .content .father');
+    const textJournalHomeChild : HTMLElement | null = query<HTMLElement>('.box-juournal-home .content .child');
+    const buttonJournalHome : HTMLButtonElement | null = query<HTMLButtonElement>('.box-juournal-home .content .show_more');
 
     return {
         show_menu_tag,
@@ -15,9 +18,20 @@ const tags = () => {
         nav_menu_list_tag,
         nav_tag,
         videoFrontPage,
-        canvaVideoFrontPage
+        canvaVideoFrontPage,
+        textJournalHome,
+        buttonJournalHome,
+        textJournalHomeChild
     }
 
+}
+
+function query<T extends HTMLElement>(tag : string, all : boolean = false) : T | null {
+    return document.querySelector<T>(tag);;
+}
+
+function queryAll<T extends HTMLElement>(tag : string, all : boolean = false) : NodeListOf<T> {
+    return document.querySelectorAll(tag);
 }
 
 export default tags
