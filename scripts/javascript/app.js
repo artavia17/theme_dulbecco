@@ -6,7 +6,10 @@ import headerVideo from "./front-page/header.js";
 import SwiperConfig from "./front-page/swiper.js";
 import TextShort from "./text/text.js";
 const html = tags();
-loadPage();
+const pathName = window.location.pathname;
+if (pathName == '/dulbecco/' || pathName == '/') {
+    loadPage();
+}
 window.addEventListener('DOMContentLoaded', () => {
     MenuAnimation(html);
     SwiperConfig();

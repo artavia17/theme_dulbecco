@@ -9,6 +9,8 @@
 @import './pages/home/book';
 @import './pages/home/group'; 
 @import './components/footer';
+@import './pages/galery/index';
+@import './pages/galery/indivual';
 
 *,
 html,
@@ -23,6 +25,7 @@ body{
 
 html {
     scrollbar-gutter: stable;
+    scroll-behavior: smooth; 
 }
 
 .responsive-box {

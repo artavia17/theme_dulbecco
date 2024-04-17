@@ -51,41 +51,47 @@ const header = () => {
 const scrollAnimation = () => {
 
     const elementnav = document.querySelector('nav');
-    const elementLogo = elementnav.querySelector('.logo');
-    const jsonAttribute = elementLogo.getAttribute('json');
-    const svg = elementLogo.querySelector('svg')
-    let scrollY = 0;
-    let navHeight = 0;
 
-    if(elementLogo && jsonAttribute){
+    if(elementnav){
 
-        scrollY = window.scrollY;
+        const elementLogo = elementnav.querySelector('.logo');
+        let jsonAttribute;
+        let svg;
+        let scrollY = 0;
+        let navHeight = 0;
 
-        navHeight = elementnav.offsetHeight;
+        if(elementLogo){
 
-        if(scrollY > navHeight){
-
-            elementnav.classList.add('active');
-
-            if(!svg){
-
-                count += 1;
-
-                if(count == 1){
-                    lottieCreate('dulbecco_svg', jsonAttribute);
+            scrollY = window.scrollY;
+            svg = elementLogo.querySelector('svg')
+    
+            navHeight = elementnav.offsetHeight;
+    
+            if(scrollY > navHeight){
+    
+                elementnav.classList.add('active');
+                jsonAttribute = elementLogo.getAttribute('json');
+    
+                if(!svg && jsonAttribute){
+    
+                    count += 1;
+    
+                    if(count == 1){
+                        lottieCreate('dulbecco_svg', jsonAttribute);
+                    }
+    
                 }
-
+    
+            }else{
+                elementnav.classList.remove('active');
+                if(svg){
+                    svg.remove();
+                    count = 0;
+                }
             }
-
-        }else{
-            elementnav.classList.remove('active');
-            if(svg){
-                svg.remove();
-                count = 0;
-            }
+    
+            
         }
-
-        
     }
 
 }

@@ -9,7 +9,11 @@ import TextShort from "./text/text.js";
 
 const html = tags();
 
-loadPage();
+const pathName = window.location.pathname;
+
+if(pathName == '/dulbecco/' || pathName == '/'){
+    loadPage();   
+}
 
 window.addEventListener('DOMContentLoaded', () => {
 

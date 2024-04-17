@@ -4,6 +4,10 @@ footer {
     position: relative;
     margin-top: rem(110px);
 
+    @include bp(tabletMD){
+        margin-top: rem(70px);
+    }
+
     .footer {
 
         margin: auto;
@@ -83,7 +87,7 @@ footer {
                     font-size: rem(18px);
                 }
 
-                @include bp(tablet){
+                @include bp(tabletMD){
                     font-size: rem(23px);
                     color: $principal_color;
                 }
@@ -97,7 +101,7 @@ footer {
                 column-gap: rem(10px);
                 margin-top: rem(10px);
 
-                @include bp(tablet){
+                @include bp(tabletMD){
                     column-gap: rem(25px);
                     margin-top: rem(20px);
                 }
@@ -116,7 +120,7 @@ footer {
                         transform: scale(1.15);
                     }
 
-                    @include bp(tablet){
+                    @include bp(tabletMD){
                         width: 30px;
                         height: 30px;
                     }
@@ -127,7 +131,7 @@ footer {
                         width: 50%;
                         height: 50%;
 
-                        @include bp(tablet){
+                        @include bp(tabletMD){
                             width: 100%;
                             height: 100%;
                         }

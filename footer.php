@@ -1,4 +1,4 @@
-<footer>
+<footer id="contact">
     <?= wp_footer() ?>
     <section class="responsive-box footer">
         <section class="logo">
