@@ -4,7 +4,30 @@
 
         width: 100%;
         height: 35vh;
-        background: blue;
+
+        @include bp(mobileBIG){
+            height: 50vh;
+        }
+
+        @include bp(tablet){
+            height: 55vh;
+        }
+
+        @include bp(tabletMD){
+            height: 60vh;
+        }
+
+        @include bp(laptop){
+            height: 63vh;
+        }
+
+        @include bp(laptopBIG){
+            height: 65vh;
+        }
+
+        @include bp(escritorio){
+            height: 60vh;
+        }
 
         img {
 
@@ -22,6 +45,10 @@
         flex-flow: column;
         align-items: center;
 
+        @include bp(mobileBIG){
+            margin-top: rem(10px);
+        }
+
         .content {
 
             margin-top: rem(15px);
@@ -29,6 +56,17 @@
             font-size: rem(15px);
             line-height: 22px;
             color: $terciary_color;
+
+            @include bp(mobileBIG){
+                font-size: rem(20px);
+                line-height: rem(25px);
+            }
+
+            @include bp(tablet){
+                font-size: rem(22px);
+                line-height: rem(27px);
+            }
+
 
             h2,
             h3,
@@ -40,6 +78,32 @@
                 line-height: rem(30px);
                 margin: rem(20px) 0px rem(10px) 0px;
                 color: $secundary_color;
+
+                @include bp(mobileBIG){
+                    font-size: rem(45px);
+                    line-height: rem(45px);
+                }
+
+                @include bp(tablet){
+                    font-size: rem(50px);
+                    line-height: rem(50px);
+                }
+
+                @include bp(tabletMD){
+                    font-size: rem(52px);
+                    line-height: rem(52px);
+                }
+
+                @include bp(laptop){
+                    font-size: rem(55px);
+                    line-height: rem(55px);
+                }
+
+                @include bp(escritorio){
+                    font-size: rem(60px);
+                    line-height: rem(60px);
+                }
+
             }
 
             p,
@@ -58,12 +122,28 @@
         .list {
 
             margin-top: rem(20px);
+            width: 100%;
+
+            @include bp(mobileBIG){
+                margin-top: rem(30px);
+            }
 
             .item {
 
                 display: flex;
                 flex-flow: column;
                 align-items: center;
+                border-bottom: 1px solid $cuarto_color;
+                padding-bottom: rem(40px);
+                margin-bottom: rem(40px);
+
+                &:last-of-type {
+
+                    border-bottom: none;
+                    padding-bottom: 0px;
+                    margin-bottom: 0px;
+
+                }
 
                 .header {
 
@@ -72,11 +152,40 @@
                     justify-items: center;
                     align-items: center;
 
+                    @include bp(mobileBIG){
+                        width: 100%;
+                    }
+
+                    @include bp(tablet){
+                        max-width: 550px;
+                    }
+
+                    @include bp(tabletMD){
+                        max-width: 700px;
+                    }
+
+                    @include bp(laptop){
+                        max-width: 850px;
+                    }
+
+                    @include bp(laptopBIG){
+                        max-width: 900px;
+                    }
+
+                    @include bp(escritorio){
+                        max-width: 950px;
+                    }
+
                     .title {
 
                         display: flex;
                         align-items: center;
                         column-gap: rem(15px);
+
+                        @include bp(mobileBIG){
+                            width: 100%;
+                            justify-content: flex-end;
+                        }
 
                         span {
 
@@ -85,7 +194,25 @@
                             font-family: $font_secundary;
                             color: $cuarto_color;
 
+                            @include bp(mobileBIG){
+                                font-size: rem(70px);
+                            }
 
+                            @include bp(tabletMD){
+                                font-size: rem(85px);
+                            }
+
+                            @include bp(laptop){
+                                font-size: rem(95px);
+                            }
+
+                            @include bp(laptopBIG){
+                                font-size: rem(110px);
+                            }
+
+                            @include bp(escritorio){
+                                font-size: rem(115px);
+                            }
 
                         }
 
@@ -95,6 +222,31 @@
                             font-size: rem(25px);
                             line-height: rem(25px);
                             text-wrap: balance;
+
+                            @include bp(mobileBIG){
+                                font-size: rem(30px);
+                                line-height: rem(30px);
+                            }
+
+                            @include bp(tabletMD){
+                                font-size: rem(40px);
+                                line-height: rem(40px);
+                            }
+
+                            @include bp(laptop){
+                                font-size: rem(50px);
+                                line-height: rem(50px);
+                            }
+
+                            @include bp(laptopBIG){
+                                font-size: rem(55px);
+                                line-height: rem(55px);
+                            }
+
+                            @include bp(escritorio){
+                                font-size: rem(60px);
+                                line-height: rem(60px);
+                            }
 
                         }
 
@@ -111,6 +263,8 @@
 
                     .subtitle {
 
+                        width: 100%;
+
                         h4 {
 
                             font-size: rem(15px);
@@ -119,6 +273,28 @@
                             line-height: rem(21px);
                             text-wrap: balance;
                             font-weight: 400;
+
+                            @include bp(mobileBIG){
+                                font-size: rem(17px);
+                                line-height: rem(18px);
+                            }
+
+                            @include bp(tabletMD){
+                                font-size: rem(19px);
+                                line-height: rem(20px);
+                            }
+
+                            @include bp(laptop){
+                                font-size: rem(21px);
+                                line-height: rem(23px);
+                            }
+
+                            @include bp(escritorio){
+                                font-size: rem(22px);
+                                line-height: rem(24px);
+                            }
+
+
     
                         }    
 
@@ -129,14 +305,45 @@
                 .main {
 
                     margin-top: rem(20px);
+                    width: 100%;
 
                     .image {
 
+                        width: 100%;
+                        height: 35vh;
                         position: relative;
+                        overflow: hidden;
+
+                        @include bp(mobileBIG){
+                            height: 50vh;
+                        }
+
+                        @include bp(tablet){
+                            height: 55vh;
+                        }
+
+                        @include bp(tabletMD){
+                            height: 60vh;
+                        }
+
+                        @include bp(laptop){
+                            height: 63vh;
+                        }
+
+                        @include bp(laptopBIG){
+                            height: 65vh;
+                        }
+
+                        @include bp(escritorio){
+                            height: 60vh;
+                        }
 
                         img {
 
                             display: block;
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
 
                         }
 
@@ -146,8 +353,20 @@
                             right: 0px;
                             top: 0px;
                             background-color: $principal_color;
-                            padding: rem(7px);
+                            padding: rem(10px) rem(13px);
                             width: rem(75px);
+
+                            @include bp(tablet){
+                                width: rem(90px);
+                            }
+
+                            @include bp(laptop){
+                                width: rem(110px);
+                            }
+
+                            @include bp(escritorio){
+                                width: rem(115px);
+                            }
 
 
                             img {
@@ -163,13 +382,115 @@
                             position: absolute;
                             right: 0px;
                             bottom: 0px;
-                            width: rem(75px);
+                            display: flex;
+                            column-gap: rem(10px);
+                            justify-content: space-between;
+                            align-items: center;
+                            padding: rem(10px) rem(13px);
+                            text-wrap: nowrap;
+                            font-family: $font_secundary;
+                            font-weight: 600;
+                            font-size: rem(15px);
+                            background-color: $principal_color;
+                            border: 1px solid transparent;
+                            color: $secundary_color;
+                            transition: .2s ease;
+                            cursor: pointer;
+
+                            &:hover{
+
+                                background-color: transparent;
+                                border: 1px solid $principal_color;
+                                color: $principal_color;
+
+                            }
+
+                            @include bp(mobileBIG){
+                                font-size: rem(17px);
+                            }
+
+                            @include bp(tablet){
+                                font-size: rem(18px);
+                            }
+
+                            @include bp(laptop){
+                                font-size: rem(20px);
+                            }
+
+                            @include bp(escritorio){
+                                font-size: rem(21px);
+                            }
+
+                            svg {
+
+                                @include bp(mobileBIG){
+                                    width: 20px;
+                                    height: 20px;
+                                }
+
+                                @include bp(escritorio){
+                                    width: 22px;
+                                    height: 22px;
+                                }
+
+                            }
 
                         }
 
                         .ilustracion {
 
                             width: 100%;
+
+                        }
+
+                    }
+
+                    .content {
+
+                        display: grid;
+                        grid-template-columns: repeat(2, 1fr);
+                        grid-gap: rem(15px);
+                        margin: rem(30px) auto auto auto;
+
+                        @include bp(tablet){
+                            max-width: 550px;
+                        }
+
+                        @include bp(tabletMD){
+                            max-width: 700px;
+                        }
+
+                        @include bp(laptop){
+                            max-width: 850px;
+                        }
+
+                        @include bp(laptopBIG){
+                            max-width: 900px;
+                        }
+
+                        @include bp(escritorio){
+                            max-width: 950px;
+                        }
+
+                        h5 {
+
+                            margin-top: 0px;
+                            display: inline-block;
+
+                        }
+
+                        .description,
+                        .sinopsis {
+                            display: inline-block;
+
+                            strong {
+
+                                background-color: $secundary_color;
+                                padding: rem(5px);
+                                color: $principal_color;
+                                font-weight: 400;
+
+                            }
 
                         }
 
