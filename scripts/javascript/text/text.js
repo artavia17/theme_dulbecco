@@ -5,16 +5,16 @@ let allSize = false;
 let firstHeight = 0;
 let secondHeight = 0;
 const TextShort = (textJournalHome, buttonTextJournal) => {
-    if (textJournalHome && buttonTextJournal) {
-        textNormal = textJournalHome.innerHTML;
-        firstHeight = textJournalHome.offsetHeight;
-        textShort = `${textJournalHome.innerHTML.substring(0, 700)}...`;
-        textJournalHome.innerHTML = textShort;
-        secondHeight = textJournalHome.offsetHeight;
-        heightElement = textJournalHome.offsetHeight;
-        setStyle(textJournalHome, secondHeight);
-        buttonTextJournal.addEventListener('click', () => establishHeight(textJournalHome, buttonTextJournal));
-    }
+    // if(textJournalHome && buttonTextJournal){
+    //     textNormal = textJournalHome.innerHTML;
+    //     firstHeight = textJournalHome.offsetHeight;
+    //     textShort = `${textJournalHome.innerHTML.substring(0, 700)}...`;
+    //     textJournalHome.innerHTML = textShort;
+    //     secondHeight = textJournalHome.offsetHeight;
+    //     heightElement = textJournalHome.offsetHeight;
+    //     setStyle(textJournalHome, secondHeight);
+    //     buttonTextJournal.addEventListener('click', () => establishHeight(textJournalHome, buttonTextJournal))
+    // }
 };
 const establishHeight = (textJournalHome, buttonTextJournal) => {
     const childElementP = buttonTextJournal.querySelector('p');

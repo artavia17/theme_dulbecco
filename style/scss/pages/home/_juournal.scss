@@ -79,6 +79,8 @@
 
             svg {
 
+                color: $secundary_color;
+
                 @include bp(tablet){
                     width: 60px;
                     height: 60px;

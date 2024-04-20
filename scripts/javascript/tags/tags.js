@@ -8,6 +8,7 @@ const tags = () => {
     const textJournalHome = query('.box-juournal-home .content .father');
     const textJournalHomeChild = query('.box-juournal-home .content .child');
     const buttonJournalHome = query('.box-juournal-home .content .show_more');
+    const accodeonTags = queryAll('.accordeon');
     return {
         show_menu_tag,
         show_menu_mobile_tag,
@@ -17,12 +18,12 @@ const tags = () => {
         canvaVideoFrontPage,
         textJournalHome,
         buttonJournalHome,
-        textJournalHomeChild
+        textJournalHomeChild,
+        accodeonTags
     };
 };
 function query(tag, all = false) {
     return document.querySelector(tag);
-    ;
 }
 function queryAll(tag, all = false) {
     return document.querySelectorAll(tag);

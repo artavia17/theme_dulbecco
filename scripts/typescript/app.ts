@@ -5,6 +5,7 @@ import tags from "./tags/tags.js";
 import headerVideo from "./front-page/header.js";
 import SwiperConfig from "./front-page/swiper.js";
 import TextShort from "./text/text.js";
+import AccoderonConfig from "./accordeon/accordeon.js";
 
 
 const html = tags();
@@ -20,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
     MenuAnimation(html);
     SwiperConfig();
     TextShort(html.textJournalHome, html.buttonJournalHome);
+    AccoderonConfig(html.accodeonTags);
 
     if(html.videoFrontPage && html.canvaVideoFrontPage){
         headerVideo(html.videoFrontPage, html.canvaVideoFrontPage);

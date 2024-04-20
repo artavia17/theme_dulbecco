@@ -24,10 +24,12 @@
         }
     ?>
 
-    <nav class="galery">
-        <section class="responsive-box ">
+    <nav class="galery <?= $menuBig ? 'big' : '' ?>  <?= $navFixed ? 'fixed' : '' ?>">
+        <section class="<?= $menuBig ? 'responsive-box-big' : 'responsive-box' ?> ">
             <section class="logo">
-                <h1><?= $title ?></h1>
+                <a href="<?= home_url() ?>">
+                    <h1><?= $title ?></h1>
+                </a>
             </section>
             <input type="checkbox" name="show_menu" id="show_menu">
             <label for="show_menu" class="show_menu_mobile" disabled>

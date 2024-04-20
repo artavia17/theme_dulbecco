@@ -4,9 +4,11 @@ const SwiperConfig = () => {
         Object.assign(swiperEl, {
             slidesPerView: 1.5,
             spaceBetween: 20,
+            centeredSlides: "true",
             breakpoints: {
                 700: {
                     slidesPerView: 2,
+                    centeredSlides: "false",
                 },
                 900: {
                     slidesPerView: 2.5,

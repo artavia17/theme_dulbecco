@@ -11,6 +11,7 @@ const tags = () => {
     const textJournalHome : HTMLElement | null = query<HTMLElement>('.box-juournal-home .content .father');
     const textJournalHomeChild : HTMLElement | null = query<HTMLElement>('.box-juournal-home .content .child');
     const buttonJournalHome : HTMLButtonElement | null = query<HTMLButtonElement>('.box-juournal-home .content .show_more');
+    const accodeonTags : NodeListOf<HTMLElement> = queryAll<HTMLButtonElement>('.accordeon');
 
     return {
         show_menu_tag,
@@ -21,13 +22,14 @@ const tags = () => {
         canvaVideoFrontPage,
         textJournalHome,
         buttonJournalHome,
-        textJournalHomeChild
+        textJournalHomeChild,
+        accodeonTags
     }
 
 }
 
 function query<T extends HTMLElement>(tag : string, all : boolean = false) : T | null {
-    return document.querySelector<T>(tag);;
+    return document.querySelector<T>(tag);
 }
 
 function queryAll<T extends HTMLElement>(tag : string, all : boolean = false) : NodeListOf<T> {

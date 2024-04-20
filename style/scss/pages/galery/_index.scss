@@ -4,6 +4,51 @@
 
 }
 
+.not-found {
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70dvh;
+
+    h2 {
+
+        text-align: center;
+        font-family: $font_secundary;
+        font-weight: bold; 
+        font-size: rem(32px);
+        color: $secundary_color;
+        margin-bottom: rem(25px);
+
+
+        @include bp(mobileBIG){
+            font-size: rem(37px);
+        }
+
+        @include bp(tablet){
+            font-size: rem(43px);
+        }
+
+        @include bp(tabletMD){
+            font-size: rem(47px);
+        }
+
+        @include bp(laptop){
+            font-size: rem(53px);
+        }
+
+        @include bp(laptopBIG){
+            font-size: rem(57px);
+        }
+    
+            @include bp(escritorio){
+                font-size: rem(63px);
+            };
+
+    }
+
+}
+
 .galery_content {
 
     margin-top: rem(15px);

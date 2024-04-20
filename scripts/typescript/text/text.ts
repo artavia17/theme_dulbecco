@@ -7,23 +7,23 @@ let secondHeight : number = 0;
 
 const TextShort = (textJournalHome : HTMLElement | null, buttonTextJournal : HTMLButtonElement | null) => {
 
-    if(textJournalHome && buttonTextJournal){
-        textNormal = textJournalHome.innerHTML;
-        firstHeight = textJournalHome.offsetHeight;
+    // if(textJournalHome && buttonTextJournal){
+    //     textNormal = textJournalHome.innerHTML;
+    //     firstHeight = textJournalHome.offsetHeight;
 
-        textShort = `${textJournalHome.innerHTML.substring(0, 700)}...`;
+    //     textShort = `${textJournalHome.innerHTML.substring(0, 700)}...`;
 
-        textJournalHome.innerHTML = textShort;
-        secondHeight = textJournalHome.offsetHeight;
+    //     textJournalHome.innerHTML = textShort;
+    //     secondHeight = textJournalHome.offsetHeight;
 
 
-        heightElement = textJournalHome.offsetHeight;
+    //     heightElement = textJournalHome.offsetHeight;
 
-        setStyle(textJournalHome, secondHeight);
+    //     setStyle(textJournalHome, secondHeight);
 
-        buttonTextJournal.addEventListener('click', () => establishHeight(textJournalHome, buttonTextJournal))
+    //     buttonTextJournal.addEventListener('click', () => establishHeight(textJournalHome, buttonTextJournal))
 
-    }
+    // }
 
 }
 

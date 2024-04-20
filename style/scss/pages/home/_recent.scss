@@ -44,25 +44,30 @@
 
         position: relative;
 
-        &::before,
-        &::after{
-            content: "";
-            position: absolute;
-            top: 0px;
-            width: 10%;
-            height: 100%;
-            z-index: 999;
-            background-color: white;
-        }
+        @include bp(tablet){
 
-        &::before{
-            left: 0px;
-            mask-image: linear-gradient(to right, rgb(0, 0, 0) 0%, transparent);
-        }
+            &::before,
+            &::after{
+                content: "";
+                position: absolute;
+                top: 0px;
+                width: 10%;
+                height: 100%;
+                z-index: 999;
+                background-color: white;
+            }
 
-        &::after{
-            right: 0px;
-            mask-image: linear-gradient(to left, rgb(0, 0, 0) 0%, transparent);
+            &::before{
+                left: 0px;
+                mask-image: linear-gradient(to right, rgb(0, 0, 0) 0%, transparent);
+            }
+
+            &::after{
+                right: 0px;
+                mask-image: linear-gradient(to left, rgb(0, 0, 0) 0%, transparent);
+            }
+
+
         }
 
         swiper-slide {

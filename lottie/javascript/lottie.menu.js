@@ -4,7 +4,7 @@
 
 let count = 0;
 
-window.addEventListener('DOMContentLoaded', () => {
+window.addEventListener('load', () => {
     header();
 })
 

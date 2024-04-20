@@ -2,6 +2,8 @@
 
 <?php
     $title = 'Galery';
+    $menuBig = true;
+
     include(get_stylesheet_directory() . '/components/blog/header.php');
 
     $args = array(
@@ -9,12 +11,13 @@
     );
     
     $query = new WP_Query( $args );
+
 ?>
 
 
-<div id="primary" class="content-area responsive-box">
+<div id="primary" class="content-area responsive-box-big">
 
-    <main id="main" class="galery_content">
+    <main id="main" class="<?= $query->have_posts() ? 'galery_content' : 'not-found' ?>">
         
         <?php
         if ( $query->have_posts() ) :

@@ -1,0 +1,120 @@
+
+.accordeon.active {
+
+    .header {
+
+        h2 {
+
+            background-color: $secundary_color;
+            color: $principal_color;
+            padding: 0px rem(15px);
+
+        }
+
+        button {
+
+            svg {
+
+                transform: rotateX(180deg);
+
+            }
+
+        }
+
+    }
+
+    .content {
+
+        padding-top: rem(20px);
+        padding-bottom: rem(20px);
+        overflow: hidden;
+        transition: .3s ease;
+
+    }
+
+    .content.normal {
+        padding-bottom: rem(0px);
+    }
+
+}
+
+
+.accordeon {
+
+    margin-bottom: rem(10px);
+
+    &:last-of-type {
+
+        margin-bottom: rem(0px);
+
+    }
+
+    .header {
+
+        margin: 0px;
+
+        h2 {
+
+            background-color: transparent;
+            color: $secundary_color;
+            padding: 0px 0px;
+            min-height: rem(60px);
+            transition: .4s ease !important;
+            font-size: rem(30px);
+            display: flex;
+            align-items: center;
+    
+            @include bp(mobileBIG){
+                font-size: rem(40px);
+            }
+    
+            @include bp(tablet){
+                font-size: rem(45px);
+                min-height: 70px;
+            }
+    
+            @include bp(tabletMD){
+                font-size: rem(50px);
+                min-height: 80px;
+            }
+    
+            @include bp(laptop){
+                font-size: rem(55px);
+                min-height: 90px;
+            }
+    
+            @include bp(laptopBIG){
+                font-size: rem(60px);
+                min-height: 100px;
+            }
+    
+            @include bp(escritorio){
+                font-size: rem(65px);
+                min-height: 110px;
+            };
+
+        }
+
+        button {
+
+            svg {
+
+                transform: rotateX(0deg);
+                transition: .4s ease;
+
+            }
+
+        }
+
+    }
+
+    .content {
+
+        padding-top: 0px ;
+        padding-bottom: 0px ;
+        overflow: hidden;
+        transition: .3s ease;
+
+    }
+
+}

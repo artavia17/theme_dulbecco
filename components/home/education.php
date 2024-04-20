@@ -1,4 +1,4 @@
-<section class="responsive-box box-education-home">
+<section class="responsive-box box-education-home accordeon active">
     <section class="header">
         <h2 data-aos="fade-up">Education</h2>
         <button>
@@ -7,7 +7,7 @@
             </svg>
         </button>
     </section>
-    <section class="content">
+    <section class="content normal">
         <?php
             echo $education
         ?>
