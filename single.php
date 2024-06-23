@@ -22,6 +22,25 @@
         <section class="content responsive-box">
             <?= the_content() ?>
         </section>
+        <?php
+            $youtube_url = get_field('youtube');
+            if($youtube_url){
+                parse_str(parse_url($youtube_url, PHP_URL_QUERY), $queryParams);
+                // Obtener el valor del parámetro 'v'
+                $videoId = $queryParams['v'];
+        ?>
+            <section class="video responsive-box">
+                <iframe 
+                    src="https://www.youtube.com/embed/<?= $videoId ?>" 
+                    title="YouTube video player" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    referrerpolicy="strict-origin-when-cross-origin" 
+                    allowfullscreen></iframe>
+            </section>
+        <?php
+            }
+        ?>  
         <section class="list">
             <?php include(get_stylesheet_directory() . '/components/blog/ilustraciones.php');?>
             <?php include(get_stylesheet_directory() . '/components/blog/caracteristicas.php');?>

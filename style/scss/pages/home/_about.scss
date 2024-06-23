@@ -34,7 +34,7 @@
         font-family: $font_secundary;
         font-weight: normal; 
         font-size: rem(35px);
-        text-transform:uppercase;
+        // text-transform:uppercase;
 
         &::after,
         &::before{
@@ -131,16 +131,13 @@
             line-height: rem(27px);
         }
 
-        // @include bp(tabletMD){
-        //     font-size: rem(23px);
-        //     line-height: rem(29px);
-        // }
+        @include bp(laptop){
 
-        // @include bp(laptop){
-        //     font-size: rem(25px);
-        //     line-height: rem(30px);
-        //     text-align: left;
-        // }
+            display: grid;
+            grid-template-columns: 400px calc(100% - calc(400px + 40px));
+            grid-gap: rem(40px);
+
+        }
 
         p {
             @include bp(laptop){
@@ -148,13 +145,27 @@
             }   
         }
 
-        // @include bp(laptopBIG){
-        //     font-size: rem(85px);
-        // }
+        .image{
 
-        // @include bp(escritorio){
-        //     font-size: rem(95px);
-        // };
+            margin-bottom: rem(25px);
+
+            @include bp(laptop){
+                margin-bottom: 0px;
+            }
+
+            img{
+                width: 100%;
+
+                @include bp(tablet){
+                    max-width: 700px;
+                }
+
+                @include bp(laptop){
+                    position: sticky;
+                    top: rem(85px);
+                }
+            }
+        }
 
     }
 

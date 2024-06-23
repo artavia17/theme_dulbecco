@@ -1,7 +1,7 @@
 
 
 <?php
-    $title = 'Galery';
+    $title = 'Gallery';
     $menuBig = true;
 
     include(get_stylesheet_directory() . '/components/blog/header.php');

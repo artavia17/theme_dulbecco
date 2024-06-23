@@ -6,6 +6,7 @@ import headerVideo from "./front-page/header.js";
 import SwiperConfig from "./front-page/swiper.js";
 import TextShort from "./text/text.js";
 import AccoderonConfig from "./accordeon/accordeon.js";
+import AllImageGalery from "./gallery/gallery.js";
 
 
 const html = tags();
@@ -22,6 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
     SwiperConfig();
     TextShort(html.textJournalHome, html.buttonJournalHome);
     AccoderonConfig(html.accodeonTags);
+    AllImageGalery();
 
     if(html.videoFrontPage && html.canvaVideoFrontPage){
         headerVideo(html.videoFrontPage, html.canvaVideoFrontPage);
@@ -30,7 +32,5 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 window.addEventListener('scroll', ( e : Event) => {
-
     scrollAnimation(html);
-
 })

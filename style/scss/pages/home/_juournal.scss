@@ -177,6 +177,10 @@
         
         .father{
             transition: .5s ease;
+            height: 100%;
+            display: flex;
+            flex-flow: column;
+            justify-content: center;
         }
 
         .show_more.active {
@@ -278,6 +282,11 @@
 
             li {
                 margin-bottom: rem(20px);
+                text-wrap: pretty;
+
+                &:last-of-type{
+                    margin-bottom: 0px;
+                }
             }
         }
 

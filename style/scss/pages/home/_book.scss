@@ -89,6 +89,19 @@
             line-height: rem(25px);
         }
 
+        ul{
+
+            li {
+                margin-bottom: rem(20px);
+                text-wrap: pretty;
+                list-style: none;
+
+                &:last-of-type{
+                    margin-bottom: 0px;
+                }
+            }
+        }
+
 
     }
 

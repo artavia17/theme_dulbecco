@@ -105,6 +105,7 @@ footer {
                     column-gap: rem(25px);
                     margin-top: rem(20px);
                 }
+
                 
                 a {
 
@@ -140,6 +141,47 @@ footer {
 
                 }
 
+                .youtube{
+                    width: 55px;
+                    height: 55px;
+
+                    @include bp(tabletMD){
+                        width: 35px;
+                        height: auto;
+                    }
+
+                }
+
+            }
+
+            .counter{
+
+                letter-spacing: rem(2px);
+                display: none;
+
+                @include bp(tabletMD){
+                    display: block;
+                }
+
+                span{
+                    animation: none;
+                    font-size: rem(16px);
+                    font-family: $font_quaternary;
+                    font-weight: 500;
+                    color: $secundary_color;
+                    border: none;
+                    width: auto;
+                    height: auto;
+
+                    @include bp(mobileBIG){
+                        font-size: rem(18px);
+                    }
+
+                    @include bp(tabletMD){
+                        font-size: rem(23px);
+                        color: $principal_color;
+                    }
+                }
             }
 
         }

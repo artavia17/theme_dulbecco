@@ -1028,7 +1028,6 @@ header.home .content ul li p.llaves::after {
   font-family: dmSans_variable;
   font-weight: normal;
   font-size: 2.1875rem;
-  text-transform: uppercase;
 }
 .box-about-home h2::after, .box-about-home h2::before {
   font-size: 3.75rem;
@@ -1132,8 +1131,37 @@ header.home .content ul li p.llaves::after {
   }
 }
 @media (min-width: 1100px) {
+  .box-about-home .content {
+    display: grid;
+    grid-template-columns: 400px calc(100% - 440px);
+    grid-gap: 2.5rem;
+  }
+}
+@media (min-width: 1100px) {
   .box-about-home .content p {
     text-align: left !important;
+  }
+}
+.box-about-home .content .image {
+  margin-bottom: 1.5625rem;
+}
+@media (min-width: 1100px) {
+  .box-about-home .content .image {
+    margin-bottom: 0px;
+  }
+}
+.box-about-home .content .image img {
+  width: 100%;
+}
+@media (min-width: 700px) {
+  .box-about-home .content .image img {
+    max-width: 700px;
+  }
+}
+@media (min-width: 1100px) {
+  .box-about-home .content .image img {
+    position: sticky;
+    top: 5.3125rem;
   }
 }
 
@@ -1534,6 +1562,10 @@ header.home .content ul li p.llaves::after {
 }
 .box-juournal-home .content .father {
   transition: 0.5s ease;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
 }
 .box-juournal-home .content .show_more.active span svg {
   transform: rotate(-90deg);
@@ -1615,6 +1647,10 @@ header.home .content ul li p.llaves::after {
 }
 .box-juournal-home .content ul li {
   margin-bottom: 1.25rem;
+  text-wrap: pretty;
+}
+.box-juournal-home .content ul li:last-of-type {
+  margin-bottom: 0px;
 }
 .box-juournal-home .content em {
   background-color: #000000;
@@ -1716,6 +1752,14 @@ header.home .content ul li p.llaves::after {
     font-size: 1.25rem;
     line-height: 1.5625rem;
   }
+}
+.box-book-home .content ul li {
+  margin-bottom: 1.25rem;
+  text-wrap: pretty;
+  list-style: none;
+}
+.box-book-home .content ul li:last-of-type {
+  margin-bottom: 0px;
 }
 
 .box-group-home {
@@ -1843,7 +1887,7 @@ header.home .content ul li p.llaves::after {
 }
 @media (min-width: 700px) {
   .box-group-home .content ul li::before {
-    content: "/";
+    content: " ";
     margin: 0px 0.625rem;
   }
 }
@@ -1989,6 +2033,46 @@ footer .footer .social .social_list a svg {
   footer .footer .social .social_list a svg {
     width: 100%;
     height: 100%;
+  }
+}
+footer .footer .social .social_list .youtube {
+  width: 55px;
+  height: 55px;
+}
+@media (min-width: 901px) {
+  footer .footer .social .social_list .youtube {
+    width: 35px;
+    height: auto;
+  }
+}
+footer .footer .social .counter {
+  letter-spacing: 0.125rem;
+  display: none;
+}
+@media (min-width: 901px) {
+  footer .footer .social .counter {
+    display: block;
+  }
+}
+footer .footer .social .counter span {
+  animation: none;
+  font-size: 1rem;
+  font-family: nanumGothicCodingRegular;
+  font-weight: 500;
+  color: #000000;
+  border: none;
+  width: auto;
+  height: auto;
+}
+@media (min-width: 550px) {
+  footer .footer .social .counter span {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 901px) {
+  footer .footer .social .counter span {
+    font-size: 1.4375rem;
+    color: #ffffff;
   }
 }
 
@@ -2164,6 +2248,38 @@ footer .footer .social .social_list a svg {
   }
 }
 
+.image-absolute {
+  position: fixed;
+  top: 0px;
+  z-index: 99999;
+  background: rgba(0, 0, 0, 0.253);
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.image-absolute img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+  cursor: initial;
+}
+.image-absolute button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 35px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+.image-absolute button svg {
+  color: white;
+}
+
 .individual-galery header {
   width: 100%;
   height: 35vh;
@@ -2212,6 +2328,15 @@ footer .footer .social .social_list a svg {
   .individual-galery main {
     margin-top: 0.625rem;
   }
+}
+.individual-galery main .video {
+  margin-top: 1.5625rem;
+  width: 100%;
+  overflow: hidden;
+}
+.individual-galery main .video iframe {
+  width: 100%;
+  height: 600px;
 }
 .individual-galery main .content {
   margin-top: 0.9375rem;
@@ -2536,6 +2661,7 @@ footer .footer .social .social_list a svg {
   height: 35vh;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 @media (min-width: 550px) {
   .individual-galery main .list .item .main .image {
@@ -2706,9 +2832,38 @@ footer .footer .social .social_list a svg {
 .individual-galery main .list .item .main .image .ilustracion {
   width: 100%;
 }
+.individual-galery main .list .item .main .image .qr {
+  position: absolute;
+  top: 0px;
+  width: 70px;
+  height: 70px;
+  background-color: white;
+  padding: 10px;
+}
+@media (min-width: 550px) {
+  .individual-galery main .list .item .main .image .qr {
+    width: 80px;
+    height: 80px;
+  }
+}
+@media (min-width: 901px) {
+  .individual-galery main .list .item .main .image .qr {
+    width: 100px;
+    height: 100px;
+  }
+}
+@media (min-width: 1220px) {
+  .individual-galery main .list .item .main .image .qr {
+    width: 120px;
+    height: 120px;
+  }
+}
+.individual-galery main .list .item .main .image iframe {
+  width: 100%;
+  height: 100%;
+}
 .individual-galery main .list .item .main .content {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   grid-gap: 0.9375rem;
   margin: 1.875rem auto auto auto;
 }
@@ -2716,6 +2871,7 @@ footer .footer .social .social_list a svg {
   .individual-galery main .list .item .main .content {
     max-width: 550px;
     margin: 2.5rem auto auto auto;
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 901px) {
@@ -2745,9 +2901,38 @@ footer .footer .social .social_list a svg {
   margin-top: 0px;
   display: inline-block;
 }
+.individual-galery main .list .item .main .content .description .video_small h5.margin {
+  margin-top: 0.625rem;
+}
 .individual-galery main .list .item .main .content .description,
 .individual-galery main .list .item .main .content .sinopsis {
-  display: inline-block;
+  display: flex;
+  flex-flow: column;
+}
+.individual-galery main .list .item .main .content .description h5,
+.individual-galery main .list .item .main .content .sinopsis h5 {
+  font-family: nanumGothicCodingRegular;
+  font-size: 1.0625rem;
+  line-height: 22px;
+  color: #333333;
+}
+@media (min-width: 550px) {
+  .individual-galery main .list .item .main .content .description h5,
+  .individual-galery main .list .item .main .content .sinopsis h5 {
+    font-size: 1.375rem;
+    line-height: 1.5625rem;
+  }
+}
+@media (min-width: 700px) {
+  .individual-galery main .list .item .main .content .description h5,
+  .individual-galery main .list .item .main .content .sinopsis h5 {
+    font-size: 1.5rem;
+    line-height: 1.6875rem;
+  }
+}
+.individual-galery main .list .item .main .content .description img,
+.individual-galery main .list .item .main .content .sinopsis img {
+  width: 100%;
 }
 .individual-galery main .list .item .main .content .description strong,
 .individual-galery main .list .item .main .content .sinopsis strong {
@@ -2755,6 +2940,35 @@ footer .footer .social .social_list a svg {
   padding: 0.3125rem;
   color: #ffffff;
   font-weight: 400;
+}
+.individual-galery main .list .item .main .content .description .video_small h5,
+.individual-galery main .list .item .main .content .sinopsis .video_small h5 {
+  font-family: nanumGothicCodingRegular;
+  font-size: 1.0625rem;
+  line-height: 22px;
+  color: #333333;
+}
+@media (min-width: 550px) {
+  .individual-galery main .list .item .main .content .description .video_small h5,
+  .individual-galery main .list .item .main .content .sinopsis .video_small h5 {
+    font-size: 1.375rem;
+    line-height: 1.5625rem;
+  }
+}
+@media (min-width: 700px) {
+  .individual-galery main .list .item .main .content .description .video_small h5,
+  .individual-galery main .list .item .main .content .sinopsis .video_small h5 {
+    font-size: 1.5rem;
+    line-height: 1.6875rem;
+  }
+}
+.individual-galery main .list .item .main .content .description .video_small iframe,
+.individual-galery main .list .item .main .content .sinopsis .video_small iframe {
+  width: 100%;
+  height: 300px;
+}
+.individual-galery main .list .item .main .content.full {
+  grid-template-columns: 100%;
 }
 
 .accordeon.active .header h2 {
@@ -2917,6 +3131,11 @@ html {
 .subtitle {
   font-size: 2.5rem;
   text-wrap: balance;
+}
+
+img {
+  pointer-events: none !important;
+  user-select: none !important;
 }
 
 /*# sourceMappingURL=global.css.map */
