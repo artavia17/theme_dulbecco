@@ -1,9 +1,9 @@
 const AllImageGalery = () => {
-    const allImageContainers = document.querySelectorAll('.individual-galery .image');
+    const allImageContainers = document.querySelectorAll('.individual-galery .image, .individual-galery .content');
     allImageContainers.forEach((e) => {
         e.onclick = () => {
             const element = document.createElement('div');
-            const image = e.querySelector('img.ilustracion');
+            const image = e.querySelector('img.ilustracion, .description img');
             const imageHref = image.src;
             const newImage = `
                     <img class="ilustracion new" src="${imageHref}" alt="Ilustracion dulbecco">

@@ -315,6 +315,7 @@
                             font-size: rem(25px);
                             line-height: rem(25px);
                             text-wrap: balance;
+                            hyphens: auto;
 
                             @include bp(mobileBIG){
                                 font-size: rem(30px);

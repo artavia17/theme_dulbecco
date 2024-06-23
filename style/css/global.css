@@ -2579,6 +2579,7 @@ footer .footer .social .counter span {
   font-size: 1.5625rem;
   line-height: 1.5625rem;
   text-wrap: balance;
+  hyphens: auto;
 }
 @media (min-width: 550px) {
   .individual-galery main .list .item .header .title h3 {

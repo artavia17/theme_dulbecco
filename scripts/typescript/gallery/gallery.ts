@@ -1,12 +1,12 @@
 
 const AllImageGalery = () => {
 
-    const allImageContainers : NodeListOf<HTMLElement> = document.querySelectorAll('.individual-galery .image');
+    const allImageContainers : NodeListOf<HTMLElement> = document.querySelectorAll('.individual-galery .image, .individual-galery .content');
 
     allImageContainers.forEach((e : HTMLElement) => {
         e.onclick = () => {
             const element = document.createElement('div');
-            const image = e.querySelector('img.ilustracion') as HTMLImageElement;
+            const image = e.querySelector('img.ilustracion, .description img') as HTMLImageElement;
             const imageHref = image.src;
             const newImage = `
                     <img class="ilustracion new" src="${imageHref}" alt="Ilustracion dulbecco">
