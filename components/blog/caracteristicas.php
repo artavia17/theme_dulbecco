@@ -52,9 +52,6 @@
                             </section>
                             <section class="main">
                                 <section class="image" data-aos="fade-up">
-                                    <span>
-                                        <img src="<?= get_theme_file_uri('/assets/image/logo_dulbeco.png') ?>" alt="Dulbecco Logo">
-                                    </span>
                                     <?php
                                         if(!$image && $youtube_item){
                                             parse_str(parse_url($youtube_item, PHP_URL_QUERY), $queryParamsYoutuve);
@@ -78,7 +75,7 @@
                                     ?>
 
                                     <?php
-                                        if(!$youtube_item){
+                                        if(!$youtube_item || $image){
                                     ?>
                                             <button>
                                                 Upscale
