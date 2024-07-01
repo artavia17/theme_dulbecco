@@ -405,6 +405,7 @@ nav .menu-header-menu-container .menu_class li a {
   position: relative;
   opacity: 1;
   transition: 0.5s ease;
+  text-wrap: nowrap;
 }
 @media (min-width: 550px) {
   nav .menu-header-menu-container .menu_class li a {

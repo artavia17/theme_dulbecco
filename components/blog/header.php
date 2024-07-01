@@ -49,7 +49,7 @@
     <section class="form_contact">
         <section class="content responsive-box">
             <section class="header">
-                <h3>For gallery editions and prints, explore collections and inquire to purchase.</h3>
+                <h3>For gallery editions and prints, explore collections and inquire to purchase. Send a message:</h3>
                 <button class="close_modal">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
@@ -60,7 +60,7 @@
                 <?= do_shortcode('[contact-form-7 id="354889d" title="Modal Contact"]') ?>
             </section>
             <section class="contact">
-                <h4>Contact: </h4>
+                <h4>Contact </h4>
                 <section>
                     <a href="#">Dulbecco Lab Studio, Residencial Lisboa 2G, Alajuela 20102, Costa Rica </a>
                     <a href="mailto:info@dulbeccobioart.com">info@dulbeccobioart.com</a>

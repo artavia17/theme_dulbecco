@@ -491,6 +491,7 @@ nav {
                     position: relative;
                     opacity: 1;
                     transition: .5s ease;
+                    text-wrap: nowrap;
 
                     @include bp(mobileBIG){
                         font-size: rem(30px);
