@@ -89,3 +89,88 @@
      */
 
      add_theme_support( 'post-thumbnails' );
+
+    /**
+     * Validamos el idioma
+     */
+
+    function languajeValidate(){
+        if(strpos($_SERVER['REQUEST_URI'], '/es') !== false){
+            return true;
+        }
+        return false;
+    }
+
+    function urlRedirect($es){
+
+        $current_url = home_url(add_query_arg(array(), $GLOBALS['wp']->request));
+        $home_page = get_home_url();
+        $new_url = '';
+        $convert_url = '';
+
+        if($es){
+
+            if($home_page == $current_url){
+
+                $convert_url = str_replace("/es", "", $current_url);
+
+                $new_url = [
+                    'url' => $convert_url,
+                    'text' => 'English'
+                ];
+            }else{
+                $new_url = [
+                    'url' => str_replace("/es/", "/", $current_url),
+                    'text' => 'English'
+                ];
+            }
+            
+        }else{
+            $new_url = [
+                'url' => str_replace("$home_page", "$home_page/es", $current_url),
+                'text' => 'Español'
+            ];
+        }
+
+        return $new_url;
+    }
+
+
+
+     function agregar_item_en_posicion($sorted_menu_items, $args) {
+        
+        $url = urlRedirect(languajeValidate());
+
+        if ($args->theme_location == 'menu-nav') {
+            
+            error_log('Generated URL: ' . esc_url($url['url']));
+
+            // El traductori agrega de forma automatica la url entonces la removemos con js
+
+            $new_item = (object) array(
+                'ID' => 1000,
+                'title' => $url['text'],
+                'url' => esc_url($url['url']),
+                'menu_order' => 5,
+                'type' => '',
+                'object' => '',
+                'object_id' => '',
+                'db_id' => 0,
+                'menu_item_parent' => 0,
+                'classes' => array('menu-item', $url['text'] == 'English' ? 'english' : ''),
+                'target' => '',
+                'attr_title' => '',
+                'description' => '',
+                'xfn' => '',
+                'current' => false,
+                'current_item_ancestor' => false,
+                'current_item_parent' => false
+            );
+    
+            array_splice($sorted_menu_items, 4, 0, array($new_item));
+        }
+        return $sorted_menu_items;
+    }
+    add_filter('wp_nav_menu_objects', 'agregar_item_en_posicion', 10, 2);
+    
+    

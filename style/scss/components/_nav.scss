@@ -1,35 +1,6 @@
 nav.active{
 
     background-color: $secundary_color; 
-    // transform: translateY(20px);
-    // margin: 0px 15px;
-    // width: calc(100% - 70px);
-    // border-radius: 15px;
-    // padding: 15px 20px;
-
-    @include bp(tablet){
-        // padding: 10px 0px;
-        // width: 100%;
-        // margin: auto;
-        // max-width: 675px;
-    }
-
-    @include bp(tabletMD){
-        // max-width: 850px;
-        // padding: 12px 0px;
-    }
-
-    @include bp(laptop){
-        // max-width: 1000px;
-    }
-
-    @include bp(laptopBIG){
-        // max-width: 1200px;
-    }
-
-    @include bp(escritorio){
-        // max-width: 1300px;
-    }
 
 
     .logo{
@@ -44,40 +15,9 @@ nav.active{
         }
     }
 
-    .menu-header-menu-container{
-        // transform: translate(-16px, -21px);
-
-        // @include bp(tablet){
-        //     transform: translate(0px, 0px);
-        // }
-    }
 
 }
 
-nav.galery.active.big {
-
-    // @include bp(tablet){
-    //     max-width: 675px;
-    // }
-
-    // @include bp(tabletMD){
-    //     max-width: 850px;
-    // }
-
-    // @include bp(laptop){
-    //     max-width: 1100px;
-    // }
-
-    // @include bp(laptopBIG){
-    //     max-width: 1250px;
-    // }
-
-    // @include bp(escritorio){
-    //     max-width: 1600px;
-    // }
-
-
-}
 
 nav.galery.active{
     

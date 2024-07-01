@@ -22,7 +22,12 @@ const AllImageGalery = () => {
 
             element.insertAdjacentHTML('afterbegin', newImage);
 
-            element.onclick = () => element.remove();
+            element.onclick = () => {
+                element.classList.add('remove')
+                setTimeout(()=>{
+                    element.remove();
+                }, 400)
+            }
 
             const newImageTag : HTMLImageElement | null = document.querySelector('.ilustracion.new');
 

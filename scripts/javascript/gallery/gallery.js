@@ -16,7 +16,12 @@ const AllImageGalery = () => {
             element.classList.add('image-absolute');
             document.body.insertAdjacentElement('afterbegin', element);
             element.insertAdjacentHTML('afterbegin', newImage);
-            element.onclick = () => element.remove();
+            element.onclick = () => {
+                element.classList.add('remove');
+                setTimeout(() => {
+                    element.remove();
+                }, 400);
+            };
             const newImageTag = document.querySelector('.ilustracion.new');
             if (newImageTag) {
                 newImageTag.onclick = e => e.stopPropagation();

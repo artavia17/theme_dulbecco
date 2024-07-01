@@ -1,8 +1,18 @@
+.image-absolute.remove{
+    transition: .3s ease;
+    opacity: 0;
+
+    img{
+        transition: .4s ease;
+        transform: translateY(-15%);
+    }
+}
+
 .image-absolute{
     position: fixed;
     top: 0px;
     z-index: 99999;
-    background: rgba(0, 0, 0, 0.253);
+    background: $secundary_color_transparent_two;
     width: 100%;
     height: 100%;
     backdrop-filter: blur(10px);
@@ -10,12 +20,39 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 1;
+    transition: .3s ease;
+    
+    @include animate(showImageContent, .3s, ease, 1);
+
+    @include keyframes(showImageContent){
+        0%{
+            opacity: 0;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
 
     img{
         width: 80%;
         height: 80%;
         object-fit: contain;
         cursor: initial;
+        transform: translateY(0%);
+
+        @include animate(showImage, .4s, ease, 1);
+
+        @include keyframes(showImage){
+            0%{
+                transform: translateY(15%);
+            }
+
+            100%{
+                transform: translateY(0%);
+            }
+        }
     }
 
     button{

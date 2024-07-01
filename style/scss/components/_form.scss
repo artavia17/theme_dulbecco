@@ -1,0 +1,306 @@
+
+
+.form_contact.show.remove{
+    transition: .3s ease;
+    opacity: 0;
+
+    .content{
+        transition: .4s ease;
+        transform: translateY(-15%);
+    }
+}
+
+.form_contact.show{
+    display: grid;
+    place-items: center;
+    opacity: 1;
+    
+    @include animate(showForm, .3s, ease, 1);
+
+    @include keyframes(showForm){
+        0%{
+            opacity: 0;
+        }
+
+        100%{
+            opacity: 1;
+        }
+    }
+
+    .content{
+
+        transform: translateY(0%);
+
+        @include animate(showFormContent, .4s, ease, 1);
+
+        @include keyframes(showFormContent){
+            0%{
+                transform: translateY(15%);
+            }
+
+            100%{
+                transform: translateY(0%);
+            }
+        }
+
+    }
+}
+
+.form_contact{
+
+    position: fixed;
+    background-color: $secundary_color_transparent_two;
+    top: 0px;
+    z-index: 9999;
+    width: 100dvw;
+    height: 100dvh;
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: .2s ease;
+    display: none;
+
+    .content{
+        background-color: $principal_color;
+        width: calc(100% - rem(60px));
+        max-height: 90dvh;
+        overflow: auto;
+        padding: rem(15px);
+        position: relative;
+
+        @include bp(mobileBIG){
+            padding: rem(30px);    
+            width: calc(100% - rem(120px));
+        }
+
+        @include bp(tablet){
+            max-width: 600px;
+        }
+
+        .header{
+            display: grid;
+            grid-template-columns: calc(100% - rem(40px)) rem(30px);
+            grid-gap: rem(10px);
+            align-items: self-start;
+            margin-bottom: rem(15px);
+
+            @include bp(mobileBIG){
+                margin-bottom: rem(30px);
+            }
+
+            h3{
+    
+                font-size: rem(23px);
+                line-height: rem(24px);
+                font-family: $font_secundary;
+                font-weight: 400;
+
+                @include bp(tabletMD){
+                    font-size: rem(30px);
+                    line-height: rem(31px);
+                }
+    
+            }
+
+            .close_modal{
+                width: rem(30px);
+                width: rem(30px);
+                background-color: transparent;
+                border: none;
+                display: grid;
+                place-items: center;
+                cursor: pointer;
+                transform: scale(1);
+                transition: .2s ease;
+
+                &:active{
+                    transform: scale(0.90);
+                }
+            }
+        }
+
+        .form{
+            
+            p{
+                position: relative;
+                display: block;
+                margin-bottom: 10px;
+
+                &:last-of-type{
+                    margin-bottom: 0px;
+                }
+            }
+
+            .wpcf7-form-control-wrap{
+                display: block;
+                height: 100%;
+                font-family: $font_quaternary;
+                font-size: rem(15px);
+                color: $error_color;
+
+                @include bp(tablet){
+                    font-size: rem(17px);
+                }
+            }
+
+            br{
+                display: none;
+            }
+
+            input,
+            textarea{
+                padding: rem(12px) rem(13px);
+                width: calc(100% - rem(28px));
+                border-radius: 0px;
+                border: 1px solid $cuarto_color;
+                outline: none;
+                font-family: $font_quaternary;
+                font-size: rem(15px);
+                color: $terciary_color;
+                transition: .2s ease;
+
+                @include bp(mobileBIG){
+                    font-size: rem(20px);
+                }
+    
+                @include bp(tablet){
+                    font-size: rem(22px);
+                }
+
+                &::placeholder{
+                    color: $cuarto_color;
+                }
+
+                &:focus{
+                    border: 1px solid $terciary_color;
+                }
+
+            }
+
+            input[type="submit"]{
+                background-color: $secundary_color;
+                color: $principal_color;
+                border: 1px solid $secundary_color;
+                width: auto;
+                padding: rem(12px) rem(20px);
+                cursor: pointer;
+                transition: .2s ease;
+
+                &:hover{
+                    background-color: transparent;
+                    color: $secundary_color;
+                }
+
+                &:active{
+                    transform: scale(0.95);
+                }
+            }
+
+            .wpcf7-not-valid-tip{
+                margin-top: rem(5px);
+                font-size: rem(15px);
+                line-height: rem(16px);
+
+                @include bp(mobileBIG){
+                    font-size: rem(20px);
+                    line-height: rem(21px);
+                }
+    
+                @include bp(tablet){
+                    font-size: rem(22px);
+                    line-height: rem(23px);
+                }
+            }
+
+            textarea{
+                resize: vertical;
+                min-height: 70px;
+                height: 70px;
+            }
+
+            .textarea{
+                .wpcf7-not-valid-tip{
+                    transform: translateY(-3px);
+                }
+            }
+
+            .wpcf7-response-output{
+                border: none;
+                padding: 0px;
+                margin: rem(10px) 0px 0px 0px;
+                font-family: $font_quaternary;
+                font-size: rem(15px);
+                line-height: rem(16px);
+                color: $error_color;
+
+                @include bp(mobileBIG){
+                    font-size: rem(20px);
+                    line-height: rem(21px);
+                }
+    
+                @include bp(tablet){
+                    font-size: rem(22px);
+                    line-height: rem(23px);
+                }
+            }
+        }
+
+        .contact{
+            h4{
+
+                font-size: rem(23px);
+                font-family: $font_secundary;
+                font-weight: 400;
+                text-wrap: balance;
+                text-align: left;
+                margin-top: rem(15px);
+                margin-bottom: rem(10px);
+
+                @include bp(mobileBIG){
+                    margin-top: rem(30px);
+                    margin-bottom: rem(15px);
+                }
+    
+
+                @include bp(tabletMD){
+                    font-size: rem(30px);
+                }
+            }
+
+            section{
+                display: flex;
+                flex-flow: column;
+
+                a{
+                    text-decoration: none;
+                    margin-bottom: rem(10px);
+                    font-family: $font_quaternary;
+                    font-size: rem(15px);
+                    line-height: 22px;
+                    color: $terciary_color;
+                    text-wrap: balance;
+
+                    &:last-of-type{
+                        margin-bottom: rem(0px);
+                    }
+
+                    @include bp(mobileBIG){
+                        margin-bottom: rem(13px);
+                        font-size: rem(20px);
+                        line-height: rem(25px);
+
+                        &:last-of-type{
+                            margin-bottom: rem(0px);
+                        }
+                    }
+
+                    @include bp(tablet){
+                        font-size: rem(22px);
+                        line-height: rem(27px);
+                    }
+                }
+            }
+        }
+
+    }
+
+}

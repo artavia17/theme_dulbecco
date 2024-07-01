@@ -29,7 +29,7 @@
         </section>
         <section class="contact">
             <p>Contact:</p>
-            <a href="mailto:info@dulbeccobioart.com">Info@dulbeccobioart.com</a>
+            <a href="mailto:info@dulbeccobioart.com">info@dulbeccobioart.com</a>
         </section>
     </section>
 </footer>
