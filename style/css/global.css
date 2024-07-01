@@ -3287,7 +3287,7 @@ footer .footer .social .counter span {
 .form_contact .content .form .textarea .wpcf7-not-valid-tip {
   transform: translateY(-3px);
 }
-.form_contact .content .form .wpcf7-response-output {
+.form_contact .content .invalid .wpcf7-response-output {
   border: none;
   padding: 0px;
   margin: 0.625rem 0px 0px 0px;
@@ -3297,13 +3297,34 @@ footer .footer .social .counter span {
   color: rgb(255, 51, 51);
 }
 @media (min-width: 550px) {
-  .form_contact .content .form .wpcf7-response-output {
+  .form_contact .content .invalid .wpcf7-response-output {
     font-size: 1.25rem;
     line-height: 1.3125rem;
   }
 }
 @media (min-width: 700px) {
-  .form_contact .content .form .wpcf7-response-output {
+  .form_contact .content .invalid .wpcf7-response-output {
+    font-size: 1.375rem;
+    line-height: 1.4375rem;
+  }
+}
+.form_contact .content .sent .wpcf7-response-output {
+  border: none;
+  padding: 0px;
+  margin: 0.625rem 0px 0px 0px;
+  font-family: nanumGothicCodingRegular;
+  font-size: 0.9375rem;
+  line-height: 1rem;
+  color: #46b450;
+}
+@media (min-width: 550px) {
+  .form_contact .content .sent .wpcf7-response-output {
+    font-size: 1.25rem;
+    line-height: 1.3125rem;
+  }
+}
+@media (min-width: 700px) {
+  .form_contact .content .sent .wpcf7-response-output {
     font-size: 1.375rem;
     line-height: 1.4375rem;
   }

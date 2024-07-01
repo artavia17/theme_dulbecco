@@ -57,7 +57,7 @@
                 </button>
             </section>
             <section class="form">
-                <?= do_shortcode('[contact-form-7 id="0254037" title="Formulario de contacto 1"]') ?>
+                <?= do_shortcode('[contact-form-7 id="354889d" title="Modal Contact"]') ?>
             </section>
             <section class="contact">
                 <h4>Contact: </h4>

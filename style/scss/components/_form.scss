@@ -223,6 +223,11 @@
                 }
             }
 
+            
+        }
+
+        .invalid {
+
             .wpcf7-response-output{
                 border: none;
                 padding: 0px;
@@ -231,7 +236,7 @@
                 font-size: rem(15px);
                 line-height: rem(16px);
                 color: $error_color;
-
+    
                 @include bp(mobileBIG){
                     font-size: rem(20px);
                     line-height: rem(21px);
@@ -242,6 +247,31 @@
                     line-height: rem(23px);
                 }
             }
+        }
+
+        .sent {
+
+            .wpcf7-response-output{
+                border: none;
+                padding: 0px;
+                margin: rem(10px) 0px 0px 0px;
+                font-family: $font_quaternary;
+                font-size: rem(15px);
+                line-height: rem(16px);
+                color: $successful_color;
+    
+                @include bp(mobileBIG){
+                    font-size: rem(20px);
+                    line-height: rem(21px);
+                }
+    
+                @include bp(tablet){
+                    font-size: rem(22px);
+                    line-height: rem(23px);
+                }
+            }
+    
+
         }
 
         .contact{
