@@ -1,5 +1,5 @@
 <section class="responsive-box box-about-home">
-    <h2 data-aos="fade-up">BioArtist</h2>
+    <h2 data-aos="fade-up">BioArt</h2>
     <section class="content">
         <section class="image">
             <img src="<?= get_theme_file_uri('/assets/image/dullbeco_bio_art.png') ?>" alt="Dulbecco Logo">
